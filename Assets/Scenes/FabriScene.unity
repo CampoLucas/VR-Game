@@ -8538,8 +8538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4218615af849a7448e88d0aa0b546a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lever: {fileID: 1863537255}
-  leverActivator: {fileID: 1453325025}
 --- !u!65 &1315688042
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8659,8 +8657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4218615af849a7448e88d0aa0b546a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lever: {fileID: 650251562}
-  leverActivator: {fileID: 1453325025}
 --- !u!65 &1319527590
 BoxCollider:
   m_ObjectHideFlags: 0
