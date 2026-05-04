@@ -1,5 +1,4 @@
 using UnityEngine;
-using Oculus.Interaction;
 
 public class HandVisibilityController : MonoBehaviour
 {
@@ -10,7 +9,6 @@ public class HandVisibilityController : MonoBehaviour
 
     void Update()
     {
-        
         leftHandMesh.SetActive(leftGrabber.grabbedObject != null);
         rightHandMesh.SetActive(rightGrabber.grabbedObject != null);
     }
