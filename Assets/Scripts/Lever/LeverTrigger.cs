@@ -5,14 +5,17 @@ using UnityEngine;
 public class LeverTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject lever;
-    [SerializeField] private Collider leverActivator;
+    [SerializeField] private string activatorTag;
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other == leverActivator) 
+        if (!lever.active)
         {
-            other.gameObject.SetActive(false);
-            lever.SetActive(true);
+            if (other.tag == activatorTag)
+            {
+                other.gameObject.SetActive(false);
+                lever.SetActive(true);
+            }
         }
     }
 }
