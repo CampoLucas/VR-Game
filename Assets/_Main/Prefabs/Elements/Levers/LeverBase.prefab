@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7885403782217533388
 Transform:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2a95f9ff80948c643a57b9e94a98eb3f, type: 2}
+  - {fileID: 2100000, guid: d09222a2781dc574bb710f351a06a2ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -351,7 +351,6 @@ GameObject:
   - component: {fileID: 6066018431866343193}
   - component: {fileID: 7437790100191431069}
   - component: {fileID: 4702703948621035045}
-  - component: {fileID: 6938470253578471258}
   m_Layer: 0
   m_Name: LeverBase
   m_TagString: Untagged
@@ -403,7 +402,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2a95f9ff80948c643a57b9e94a98eb3f, type: 2}
+  - {fileID: 2100000, guid: ec2ea34d73be36c4fb00fa9a20e5a637, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -446,17 +445,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21283619, y: 0.16722757, z: 0.2667243}
   m_Center: {x: 0, y: 0.024141748, z: 0}
---- !u!114 &6938470253578471258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979682013276227994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4218615af849a7448e88d0aa0b546a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lever: {fileID: 6635581615121230343}
-  activatorTag: BrokenLever
