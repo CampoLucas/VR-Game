@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 6af0694a-d3bd-4a91-9ff2-f0927eb248bd
+  instanceId: 4a9a5b56-0144-4ec3-bd2c-dcad8adbb1a4
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -137,11 +137,11 @@ GameObject:
   - component: {fileID: 6752789234352556002}
   m_Layer: 0
   m_Name: Lever
-  m_TagString: Untagged
+  m_TagString: Lever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7885403782217533388
 Transform:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: cbf51a6d-0882-48c3-9372-f7b7b159660c
+  instanceId: 1b823be2-762d-4f70-bf15-b7e4af773514
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -204,7 +204,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d09222a2781dc574bb710f351a06a2ca, type: 2}
+  - {fileID: 2100000, guid: be10e404b84cb2843abea0aafad490ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 6066018431866343193}
   - component: {fileID: 7437790100191431069}
   - component: {fileID: 4702703948621035045}
+  - component: {fileID: 2544944948924919412}
   m_Layer: 0
   m_Name: LeverBase
   m_TagString: Untagged
@@ -372,6 +373,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7885403782217533388}
+  - {fileID: 6004852174472916532}
+  - {fileID: 7313540263818830639}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &6066018431866343193
@@ -402,7 +405,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ec2ea34d73be36c4fb00fa9a20e5a637, type: 2}
+  - {fileID: 2100000, guid: be10e404b84cb2843abea0aafad490ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -445,3 +448,159 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21283619, y: 0.16722757, z: 0.2667243}
   m_Center: {x: 0, y: 0.024141748, z: 0}
+--- !u!114 &2544944948924919412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979682013276227994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9626fb8885c0c48b5c0a47ee72c0ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  lever: {fileID: 6635581615121230343}
+  activatorTag: BrokenLever
+  state: 2
+--- !u!1 &8209292903945453830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6004852174472916532}
+  - component: {fileID: 8440434481249187848}
+  - component: {fileID: 6730407397006492820}
+  m_Layer: 0
+  m_Name: Up Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6004852174472916532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209292903945453830}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.075, z: 0.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9051758665648491702}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8440434481249187848
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209292903945453830}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6730407397006492820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209292903945453830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bae3a3083f28704c95d097666f4cf8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 2544944948924919412}
+  targetTag: Lever
+  code: 1
+  nullCode: 2
+--- !u!1 &8843049057452207038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7313540263818830639}
+  - component: {fileID: 4568554137960843457}
+  - component: {fileID: 1220515655117903087}
+  m_Layer: 0
+  m_Name: Down Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7313540263818830639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843049057452207038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.075, z: -0.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9051758665648491702}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4568554137960843457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843049057452207038}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1220515655117903087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843049057452207038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bae3a3083f28704c95d097666f4cf8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 2544944948924919412}
+  targetTag: Lever
+  code: 0
+  nullCode: 2
