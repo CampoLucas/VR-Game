@@ -268,7 +268,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: G:/My Drive/facultad/2026/AR-VR/Keystore/user.keystore
+  AndroidKeystoreName: C:/Users/campo_757yxe4/Documents/Stuff/deadlock.keystore
   AndroidKeyaliasName: deadlock
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidBuildApkPerCpuArchitecture: 0

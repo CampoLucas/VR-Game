@@ -8,6 +8,7 @@ namespace VRGame.Audio
     /// Gestiona la música de fondo con fade in/out entre dos clips (menú y juego).
     ///
     /// SETUP:
+    /// ToDo: Redo this... don't create empty game objects and add them scripts, that is untraceable...
     ///   1. Crear un GameObject vacío en la escena del Menú llamado "SoundManager".
     ///   2. Añadirle este script.
     ///   3. Asignar menuMusic y gameMusic en el Inspector.
