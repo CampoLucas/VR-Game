@@ -7,6 +7,9 @@ public class LeverPuzzleManager : MonoBehaviour
 {
     [SerializeField] private List<LeverController> levers;
     [SerializeField] private List<int> leverStates;
+    [SerializeField] private List<MeshRenderer> leverIndicators;
+    [SerializeField] private Material upMaterial;
+    [SerializeField] private Material downMaterial;
     [SerializeField] private bool correctCombination;
    
     private void Awake()
@@ -18,6 +21,8 @@ public class LeverPuzzleManager : MonoBehaviour
         for (int i = 0; i < levers.Count; i++) 
         {
             leverStates.Add(UnityEngine.Random.Range(0, 2));
+            if (leverStates[i] > 0) leverIndicators[i].material = upMaterial;
+            else leverIndicators[i].material = downMaterial;
         }
     }
     public void CheckLeversCombination() 
@@ -27,6 +32,6 @@ public class LeverPuzzleManager : MonoBehaviour
         {
             if (levers[i].State != leverStates[i]) correctCombination = false;
         }
-        if (correctCombination) Debug.Log("Lever Puzzle Resolve");
+        if (correctCombination) Debug.Log("Lever Puzzle Clear");
     }
 }
