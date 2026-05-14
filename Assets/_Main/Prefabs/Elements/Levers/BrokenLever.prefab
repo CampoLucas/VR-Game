@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: b4e27409-e3ff-473f-88c0-3a7d73c63c2d
+  instanceId: d030dd04-0f6d-4c2b-9e73-c2a0b02b386f
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -85,7 +85,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: be10e404b84cb2843abea0aafad490ca, type: 2}
+  - {fileID: 2100000, guid: 18719b84b474f564db45658760a09e0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 3a74b803-1dc6-493d-9028-2be8239aa501
+  instanceId: c20dd659-df1b-42e5-aeee-05c8fc953437
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8

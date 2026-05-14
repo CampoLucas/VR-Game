@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 8311830983537212439}
   - component: {fileID: 4047171904847720961}
   - component: {fileID: 3095361586076933435}
-  - component: {fileID: 453659208675553751}
+  - component: {fileID: 2235392668235584685}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -343,7 +343,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &453659208675553751
+--- !u!114 &2235392668235584685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2161250424340351699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46368eb99f3c54541970f187fc0508ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 846694d046af8eb499eab071556475a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   decrese: 0
