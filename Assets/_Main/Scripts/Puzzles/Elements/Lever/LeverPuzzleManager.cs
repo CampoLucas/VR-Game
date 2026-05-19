@@ -11,7 +11,9 @@ public class LeverPuzzleManager : MonoBehaviour
     [SerializeField] private Material upMaterial;
     [SerializeField] private Material downMaterial;
     [SerializeField] private bool correctCombination;
-   
+
+    public bool CorrectCombination { get => correctCombination; set => correctCombination = value; }
+
     private void Awake()
     {
         leverStates = new List<int>();
