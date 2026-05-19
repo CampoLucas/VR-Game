@@ -6,6 +6,7 @@ using System;
 
 public class ClockTimer : MonoBehaviour
 {
+    [SerializeField] private bool decrese;
     [SerializeField] private int limitedTimeInSeconds = 0;
     [SerializeField] private int timeInSeconds = 0;
     [SerializeField] private bool isRunning = false;
@@ -13,9 +14,15 @@ public class ClockTimer : MonoBehaviour
     
     private float currentTimer = 0;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
         isRunning = true;
+        if (decrese) textTime.text = TimeSpan.FromSeconds(limitedTimeInSeconds).Minutes.ToString("00") + ":" + TimeSpan.FromSeconds(limitedTimeInSeconds).Seconds.ToString("00");
+        else textTime.text = TimeSpan.FromSeconds(timeInSeconds).Minutes.ToString("00") + ":" + TimeSpan.FromSeconds(timeInSeconds).Seconds.ToString("00");
     }
 
     // Update is called once per frame
@@ -29,13 +36,22 @@ public class ClockTimer : MonoBehaviour
             }
             else 
             {
-                if (limitedTimeInSeconds > 0) 
-                { 
-                    limitedTimeInSeconds--;
-                    textTime.text = TimeSpan.FromSeconds(limitedTimeInSeconds).Minutes.ToString("00") + ":" + TimeSpan.FromSeconds(limitedTimeInSeconds).Seconds.ToString("00");
+                if (decrese)
+                {
+                    if (limitedTimeInSeconds > 0)
+                    {
+                        limitedTimeInSeconds--;
+                        textTime.text = TimeSpan.FromSeconds(limitedTimeInSeconds).Minutes.ToString("00") + ":" + TimeSpan.FromSeconds(limitedTimeInSeconds).Seconds.ToString("00");
+                    }
+                    timeInSeconds++;
+                    currentTimer = 0;
                 }
-                timeInSeconds++;
-                currentTimer = 0;
+                else 
+                {
+                    timeInSeconds++;
+                    currentTimer = 0;
+                    textTime.text = TimeSpan.FromSeconds(timeInSeconds).Minutes.ToString("00") + ":" + TimeSpan.FromSeconds(timeInSeconds).Seconds.ToString("00");
+                }
             }
         }
     }

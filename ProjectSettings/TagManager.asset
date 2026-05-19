@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - BrokenLever
+  - Lever
   layers:
   - Default
   - TransparentFX
