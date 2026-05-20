@@ -23,8 +23,14 @@ public class LeverPuzzleManager : MonoBehaviour
         for (int i = 0; i < levers.Count; i++) 
         {
             leverStates.Add(UnityEngine.Random.Range(0, 2));
-            if (leverStates[i] > 0) leverIndicators[i].material = upMaterial;
-            else leverIndicators[i].material = downMaterial;
+            if (leverStates[i] > 0)
+            {
+                leverIndicators[i].material = upMaterial;
+            }
+            else 
+            { 
+                leverIndicators[i].material = downMaterial;
+            }
         }
     }
     public void CheckLeversCombination() 
