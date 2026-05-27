@@ -1,6 +1,5 @@
 using UnityEngine;
-using VRGame.Audio;
-using VRGame.SceneManagement;
+using VRGame.Level;
 
 namespace VRGame.UI.Menu
 {

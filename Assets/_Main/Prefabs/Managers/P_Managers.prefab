@@ -220,5 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893c3b02f69d4745914af4420b3f3f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  current: {fileID: 11400000, guid: 4d24a36e71e01b643ba9cfa41ee898b3, type: 2}
   inDuration: 1
   outDuration: 1

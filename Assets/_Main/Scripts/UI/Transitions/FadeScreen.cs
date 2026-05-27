@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using VRGame.DesignPatterns.Observers;
+using VRGame.Level;
 using VRGame.SceneManagement;
 
 namespace VRGame.UI
@@ -32,6 +33,9 @@ namespace VRGame.UI
 
         private void OnDestroy()
         {
+            LevelManager.InTransition.Detach(_inObserver);
+            LevelManager.OutTransition.Detach(_outObserver);
+            
             _inObserver?.Dispose();
             _outObserver?.Dispose();
         }

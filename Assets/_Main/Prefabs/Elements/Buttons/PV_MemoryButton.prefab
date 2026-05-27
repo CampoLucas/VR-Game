@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PV_MemoryButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1694354302011488862, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
+      propertyPath: m_Size.y
+      value: 0.20836312
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694354302011488862, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
+      propertyPath: m_Center.y
+      value: -0.104180634
+      objectReference: {fileID: 0}
     - target: {fileID: 3531851320987714061, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
       propertyPath: instanceId
       value: cfe65af3-e987-4110-b739-8349eb5ca207
@@ -65,8 +73,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7595601773268093590, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
+      propertyPath: hoverColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595601773268093590, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
+      propertyPath: hoverColor.g
+      value: 0.80729437
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595601773268093590, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
+      propertyPath: hoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595601773268093590, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
+      propertyPath: selectColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595601773268093590, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
+      propertyPath: selectColor.g
+      value: 0.9073801
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595601773268093590, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
+      propertyPath: selectColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595601773268093590, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
+      propertyPath: disabledColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595601773268093590, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
+      propertyPath: disabledColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595601773268093590, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
       propertyPath: disabledColor.r
-      value: 0.72300005
+      value: 0.41509432
       objectReference: {fileID: 0}
     - target: {fileID: 7595601773268093590, guid: 5b5acfe5c06c25743a197fcfb5ed6246, type: 3}
       propertyPath: highlightColor.g

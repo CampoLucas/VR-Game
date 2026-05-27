@@ -2,18 +2,29 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using VRGame.DesignPatterns.Observers;
+using VRGame.Level.Data;
 using VRGame.Managers;
+using VRGame.SceneManagement;
 
-namespace VRGame.SceneManagement
+namespace VRGame.Level
 {
     public class LevelManager : SingletonBehaviour<LevelManager>
     {
         private enum TransitionState { None, In, Out }
         
-        public static readonly ISubject<float> InTransition  = new Subject<float>();
+        public static readonly ISubject<float> InTransition = new Subject<float>();
         public static readonly ISubject<float> OutTransition = new Subject<float>();
         public static readonly ISubject<string> OnLevelLoaded = new Subject<string>();
 
+        public Timer LevelTimer { get; private set; } = new Timer();
+        public LevelResult LastResult { get; private set; } = new LevelResult();
+        public static string MainMenuScene => "MainMenu";
+
+        [Header("Level Settings")]
+        [SerializeField] private LevelSO current;
+        [SerializeField] private string resultsScene  = "ResultsScreen";
+        
+        [Header("Level Transition Settings")]
         [SerializeField] private float inDuration = 1f;
         [SerializeField] private float outDuration = 1f;
         
@@ -23,19 +34,30 @@ namespace VRGame.SceneManagement
         private float _outDuration;
         private string _nextScene;
 
+        private ActionObserver<float> _onTimerFinished;
+
         protected override void OnAwake()
         {
             SceneHandler.SceneLoaded += OnSceneLoaded;
+            _onTimerFinished = new ActionObserver<float>(OnTimerFinished);
+            LevelTimer.OnFinished.Attach(_onTimerFinished);
+            
+            StartTimer();
         }
 
         private void Update()
         {
-            if (_state == TransitionState.None) return;
             Tick(Time.deltaTime);
         }
 
         private void Tick(float delta)
         {
+            if (_state == TransitionState.None)
+            {
+                LevelTimer.Tick(delta);
+                return;
+            }
+
             _elapsed += delta;
 
             if (_state == TransitionState.In)
@@ -65,6 +87,38 @@ namespace VRGame.SceneManagement
             OnLevelLoaded.NotifyAll(scene.name);
             _elapsed = 0f;
             _state = TransitionState.Out;
+
+            StartTimer();
+        }
+
+        private void StartTimer()
+        {
+            if (current != null)
+            {
+                LevelTimer.StartTimer(current.TimerDuration);
+            }
+            else
+            {
+#if UNITY_EDITOR
+                Debug.LogError($"[{nameof(LevelManager)}] WARNING: LevelSO missing.", this);
+#endif
+            }
+        }
+
+        #region Timer Events
+
+        private void OnTimerFinished(float elapsed)
+        {
+            LastResult = LevelResult.RecordResult(current, elapsed);
+        }
+
+        #endregion
+
+        public void CompleteLevel()
+        {
+            if (!LevelTimer.IsRunning) return;
+            LevelTimer.FinishTimer();
+            TransitionToScene(resultsScene);
         }
         
         public void LoadScene(string sceneName)
@@ -81,6 +135,8 @@ namespace VRGame.SceneManagement
         {
             SceneHandler.LoadScene(SceneHandler.GetActiveIndex());
         }
+
+        #region Transition Methods
 
         public bool TransitionToScene(string sceneName)
         {
@@ -117,6 +173,8 @@ namespace VRGame.SceneManagement
         }
 
         public bool IsTransitioning() => _state != TransitionState.None;
+
+        #endregion
         
         protected override bool DontDestroy() => true;
 
@@ -126,6 +184,14 @@ namespace VRGame.SceneManagement
             InTransition.Dispose();
             OutTransition.Dispose();
             OnLevelLoaded.Dispose();
+            
+            LevelTimer.OnFinished.Detach(_onTimerFinished);
+            _onTimerFinished.Dispose();
+        }
+
+        protected override void OnDispose()
+        {
+            LevelTimer.Dispose();
         }
     }
 }
