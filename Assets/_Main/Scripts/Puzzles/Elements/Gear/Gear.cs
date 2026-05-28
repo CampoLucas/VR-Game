@@ -21,4 +21,12 @@ public class Gear : MonoBehaviour
         isRotating = IsRotating;
         rotationSpeed = RotationSpeed;
     }
+    public void SetRotationOffSet(float RotationOffSet) 
+    {
+        visualsGO.transform.Rotate(Vector3.up,RotationOffSet);
+    }
+    public float GetCurrentRotationY() 
+    {
+        return visualsGO.transform.localRotation.eulerAngles.y;
+    }
 }
