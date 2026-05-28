@@ -1598,7 +1598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2c1ea338d58714fa8a10adadcf68cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: Memory Puzzle Test
+  gameSceneName: Memory Puzzle Test 2
 --- !u!4 &1887354451
 Transform:
   m_ObjectHideFlags: 0

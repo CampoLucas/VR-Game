@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 using VRGame.DesignPatterns.Observers;
+using VRGame.Level;
 using VRGame.Managers;
 using VRGame.SceneManagement;
 

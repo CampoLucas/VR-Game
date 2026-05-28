@@ -126,13 +126,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   once: 1
+  activeOnStart: 1
   pokeInteractable: {fileID: 4745713441750996204}
   buttonVisual: {fileID: 1947618832099354953}
   surface: {fileID: 807652222624064895}
   onPressed:
     m_PersistentCalls:
       m_Calls: []
-  onRelesed:
+  onReleased:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7595601773268093590
@@ -149,11 +150,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRenderer: {fileID: 4096179485289226967}
   presenter: {fileID: 4327928247059272100}
-  enabledColor: {r: 1, g: 0, b: 0, a: 1}
+  normalColor: {r: 1, g: 0, b: 0, a: 1}
   hoverColor: {r: 0.9764706, g: 0.30580342, b: 0.10588234, a: 1}
   selectColor: {r: 0.90099996, g: 0, b: 0, a: 1}
   disabledColor: {r: 0.8117647, g: 0, b: 0, a: 1}
-  duration: 0.1
+  colorDuration: 0.2
+  highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightInDuration: 0.2
+  highlightOutDuration: 0.4
 --- !u!1 &1275143764619503534
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,9 +416,9 @@ Transform:
   m_GameObject: {fileID: 3684977233806699764}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0125, z: 0}
-  m_LocalScale: {x: 0.125, y: 0.012500001, z: 0.125}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3967853250259314837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -425,7 +429,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3684977233806699764}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2395576636156161631, guid: e4c02ac08027ef34789412cdb256804b, type: 3}
 --- !u!23 &8933940574850996743
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -590,7 +594,7 @@ GameObject:
   - component: {fileID: 476243724699641074}
   - component: {fileID: 5827432023495767645}
   - component: {fileID: 4096179485289226967}
-  - component: {fileID: 4434420092116214246}
+  - component: {fileID: 1694354302011488862}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -607,8 +611,8 @@ Transform:
   m_GameObject: {fileID: 8037035343348222793}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0, z: 0.25}
-  m_LocalScale: {x: 2, y: 0.24999993, z: 2}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1947618832099354953}
@@ -620,7 +624,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8037035343348222793}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -6365430257688476357, guid: e4c02ac08027ef34789412cdb256804b, type: 3}
 --- !u!23 &4096179485289226967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -663,7 +667,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4434420092116214246
+--- !u!65 &1694354302011488862
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -678,9 +682,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Size: {x: 2, y: 0.40000018, z: 2.000001}
+  m_Center: {x: 0, y: -0.1999992, z: 0}
