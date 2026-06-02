@@ -1,42 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
-using System;
+using UnityEngine.Serialization;
+using VRGame.DesignPatterns.Observers;
+using VRGame.Level;
 
 public class ClockTimer : MonoBehaviour
 {
-    [SerializeField] private int limitedTimeInSeconds = 0;
-    [SerializeField] private int timeInSeconds = 0;
-    [SerializeField] private bool isRunning = false;
-    [SerializeField] private TMP_Text textTime;
+    [SerializeField] private bool countDown = true;
+    [FormerlySerializedAs("textTime")] [SerializeField] private TMP_Text timerText;
     
-    private float currentTimer = 0;
-    // Start is called before the first frame update
-    void Start()
+    private VRGame.DesignPatterns.Observers.IObserver<float, float> _tickObserver;
+    
+    private void Start()
     {
-        isRunning = true;
+        _tickObserver = new ActionObserver<float, float>(OnTick);
+        if (!LevelManager.Instance)
+        {
+#if UNITY_EDITOR
+            Debug.LogError($"[{nameof(ClockTimer)}] WARNING: Level Manager missing.", this);
+#endif
+            return;
+        }
+        LevelManager.Instance.LevelTimer.OnTick.Attach(_tickObserver);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTick(float elapsed, float remaining)
     {
-        if (isRunning) 
-        {
-            if (currentTimer < 1)
-            {
-                currentTimer += Time.deltaTime;
-            }
-            else 
-            {
-                if (limitedTimeInSeconds > 0) 
-                { 
-                    limitedTimeInSeconds--;
-                    textTime.text = TimeSpan.FromSeconds(limitedTimeInSeconds).Minutes.ToString("00") + ":" + TimeSpan.FromSeconds(limitedTimeInSeconds).Seconds.ToString("00");
-                }
-                timeInSeconds++;
-                currentTimer = 0;
-            }
-        }
+        var display = countDown ? remaining : elapsed;
+        timerText.text = Format(display);
     }
+
+    
+    
+    private static string Format(float seconds)
+    {
+        var ts = TimeSpan.FromSeconds(seconds);
+        return $"{ts.Minutes:00}:{ts.Seconds:00}";
+    }
+    
+    private void OnDestroy()
+    {
+        var manager = LevelManager.Instance;
+        
+        if (manager && manager.LevelTimer != null) manager.LevelTimer.OnTick.Detach(_tickObserver);
+    }
+    
 }

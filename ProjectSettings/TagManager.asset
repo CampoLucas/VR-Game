@@ -5,14 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - BrokenLever
+  - Lever
+  - Gear
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Overlay UI
   - Water
   - UI
-  - 
+  - Gear
   - 
   - 
   - 
