@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverPuzzleManager : MonoBehaviour
+public class LeverPuzzleManager : MonoBehaviour, IPuzzleInterface
 {
     [SerializeField] private List<LeverController> levers;
     [SerializeField] private List<int> leverStates;
@@ -11,6 +11,7 @@ public class LeverPuzzleManager : MonoBehaviour
     [SerializeField] private Material upMaterial;
     [SerializeField] private Material downMaterial;
     [SerializeField] private bool correctCombination;
+    [SerializeField] private bool isResolved = false;
 
     public bool CorrectCombination { get => correctCombination; set => correctCombination = value; }
 
@@ -40,6 +41,11 @@ public class LeverPuzzleManager : MonoBehaviour
         {
             if (levers[i].State != leverStates[i]) correctCombination = false;
         }
-        if (correctCombination) Debug.Log("Lever Puzzle Clear");
+        if (correctCombination) isResolved = true;
+        else isResolved = false;
+    }
+    public bool GetIsResolved() 
+    {
+        return isResolved;
     }
 }

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GearPuzzle : MonoBehaviour
+public class GearPuzzle : MonoBehaviour, IPuzzleInterface
 {
     [SerializeField] private List<GearSpot> snapTriggers = new List<GearSpot>();
     [SerializeField] private Gear startGear;
     [SerializeField] private Gear endGear;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private bool isCorrect = true;
-    [SerializeField] private bool puzzleSolved = false;
+    [SerializeField] private bool isResolved = false;
 
     // Start is called before the first frame update
     private void Start()
@@ -55,10 +55,18 @@ public class GearPuzzle : MonoBehaviour
         }
         if (isCorrect)
         {
-            endGear.SetRotationOffSet(startGear.GetCurrentRotationY()+90f);
+            endGear.SetRotationOffSet(startGear.GetCurrentRotationY() + 90f);
             endGear.SetRotatingLogic(true, -rotationSpeed);
+            isResolved = true;
         }
-        else endGear.SetRotatingLogic(false, 0);
-        Debug.Log(isCorrect);
+        else 
+        {
+            endGear.SetRotatingLogic(false, 0); 
+            isResolved = false;
+        }
+    }
+    public bool GetIsResolved() 
+    {
+        return isResolved;
     }
 }
