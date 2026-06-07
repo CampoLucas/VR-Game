@@ -27,7 +27,7 @@ namespace VRGame.Puzzles.Elements.Button
         [SerializeField] private float highlightOutDuration = 0.4f;
         
         private MaterialPropertyBlock _block;
-        private static readonly int ColorID = Shader.PropertyToID("_Color");
+        private static readonly int ColorID = Shader.PropertyToID("_BaseColor");
         private static readonly int EmissionID = Shader.PropertyToID("_EmissionColor");
         //private static readonly string EmissionKeyword = "_EMISSION";
         
