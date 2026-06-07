@@ -8,7 +8,7 @@ namespace VRGame.Puzzles.Elements.PressurePlate
     /// The plate sinks slightly while the box is resting and emits a Debug.Log once.
     /// Only the rigidbody referenced by <see cref="targetBox"/> triggers the puzzle.
     /// </summary>
-    public class PressurePlate : MonoBehaviour
+    public class PressurePlate : MonoBehaviour , IPuzzleInterface
     {
         #region Serializable Variables
 
@@ -85,6 +85,11 @@ namespace VRGame.Puzzles.Elements.PressurePlate
         private bool IsBoxGrabbed()
         {
             return targetBox != null && targetBox.isKinematic;
+        }
+
+        public bool GetIsResolved()
+        {
+            return _solved;
         }
 
         #endregion

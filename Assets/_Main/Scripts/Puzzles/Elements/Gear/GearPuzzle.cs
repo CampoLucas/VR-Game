@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GearPuzzle : MonoBehaviour, IPuzzleInterface
 {
@@ -10,6 +11,7 @@ public class GearPuzzle : MonoBehaviour, IPuzzleInterface
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private bool isCorrect = true;
     [SerializeField] private bool isResolved = false;
+    [SerializeField] private UnityEvent onSucces;
 
     // Start is called before the first frame update
     private void Start()
@@ -58,6 +60,7 @@ public class GearPuzzle : MonoBehaviour, IPuzzleInterface
             endGear.SetRotationOffSet(startGear.GetCurrentRotationY() + 90f);
             endGear.SetRotatingLogic(true, -rotationSpeed);
             isResolved = true;
+            onSucces.Invoke();
         }
         else 
         {

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LeverPuzzleManager : MonoBehaviour, IPuzzleInterface
 {
@@ -12,8 +13,8 @@ public class LeverPuzzleManager : MonoBehaviour, IPuzzleInterface
     [SerializeField] private Material downMaterial;
     [SerializeField] private bool correctCombination;
     [SerializeField] private bool isResolved = false;
+    [SerializeField] private UnityEvent onSucces;
 
-    public bool CorrectCombination { get => correctCombination; set => correctCombination = value; }
 
     private void Awake()
     {
@@ -41,7 +42,11 @@ public class LeverPuzzleManager : MonoBehaviour, IPuzzleInterface
         {
             if (levers[i].State != leverStates[i]) correctCombination = false;
         }
-        if (correctCombination) isResolved = true;
+        if (correctCombination) 
+        {
+            isResolved = true;
+            onSucces.Invoke();
+        }
         else isResolved = false;
     }
     public bool GetIsResolved() 
