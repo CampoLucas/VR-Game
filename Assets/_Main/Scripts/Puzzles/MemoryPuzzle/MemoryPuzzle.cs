@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using VRGame.DesignPatterns.Observers;
+using VRGame.General.Interactables;
 using VRGame.Puzzles.Elements.Button;
 
 namespace VRGame.Puzzles
@@ -15,7 +16,7 @@ namespace VRGame.Puzzles
         [SerializeField] private float delayBetween = 1f;
 
         [Header("Buttons")]
-        [SerializeField] private List<ButtonPresenter> buttons;
+        [SerializeField] private List<ButtonInteractable> buttons;
 
         [Header("Events")]
         [SerializeField] private UnityEvent onSuccess;
@@ -29,14 +30,14 @@ namespace VRGame.Puzzles
         private int _playIndex;
         private float _timer;
 
-        private readonly List<ActionObserver<int>> _observers = new();
+        private readonly List<IObserver<int, bool>> _observers = new();
 
         private void Awake()
         {
             foreach (var button in buttons)
             {
-                var observer = new ActionObserver<int>(OnButtonPressed);
-                button.PressedSubject.Attach(observer);
+                var observer = new ActionObserver<int, bool>(OnButtonPressed);
+                button.OnPressed.Attach(observer);
                 _observers.Add(observer);
             }
         }
@@ -64,7 +65,7 @@ namespace VRGame.Puzzles
         {
             for (var i = 0; i < buttons.Count; i++)
             {
-                buttons[i].PressedSubject.Detach(_observers[i]);
+                buttons[i].OnPressed.Detach(_observers[i]);
             }
 
             foreach (var observer in _observers)
@@ -81,7 +82,7 @@ namespace VRGame.Puzzles
 
             for (var i = 0; i < sequenceLength; i++)
             {
-                _sequence[i] = buttons[UnityEngine.Random.Range(0, buttons.Count)].Id;
+                _sequence[i] = buttons[UnityEngine.Random.Range(0, buttons.Count)].Identifier;
             }
         }
         
@@ -108,7 +109,7 @@ namespace VRGame.Puzzles
         {
             for (var i = 0; i < buttons.Count; i++)
             {
-                buttons[i].SetDisabled(value);
+                buttons[i].SetEnable(!value);
             }
         }
         
@@ -121,9 +122,9 @@ namespace VRGame.Puzzles
             _timer = 0f;
         }
         
-        private void OnButtonPressed(int id)
+        private void OnButtonPressed(int id, bool pressed)
         {
-            if (!_acceptingInput) return;
+            if (!_acceptingInput || !pressed) return;
  
             if (id != _sequence[_currentIndex])
             {
@@ -141,11 +142,11 @@ namespace VRGame.Puzzles
             }
         }
         
-        private ButtonPresenter FindButton(int id)
+        private ButtonInteractable FindButton(int id)
         {
             foreach (var button in buttons)
             {
-                if (button.Id == id) return button;
+                if (button.Identifier == id) return button;
             }
  
             return null;
