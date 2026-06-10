@@ -73,10 +73,11 @@ namespace VRGame.Audio
 
             public override void OnNotify(float t)
             {
-                Source().volume = Mathf.Lerp(Volume(), 0f, t);
+               
+                Source().volume = Mathf.Lerp(0f, Volume(), t);
             }
         }
-        
+
         private sealed class MusicFadeOut : MusicFade
         {
             public MusicFadeOut(Func<AudioSource> source, Func<float> volume) : base(source, volume)
@@ -85,7 +86,8 @@ namespace VRGame.Audio
 
             public override void OnNotify(float t)
             {
-                Source().volume = Mathf.Lerp(0f,Volume(), t);
+                
+                Source().volume = Mathf.Lerp(Volume(), 0f, t);
             }
         }
     }
