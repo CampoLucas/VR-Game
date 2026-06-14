@@ -65,8 +65,14 @@ MonoBehaviour:
   _candidateTiebreaker: {fileID: 0}
   _maxIterationsPerFrame: 3
   _data: {fileID: 0}
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
+  detectionInterval: 0.1
+  maxOverlaps: 4
   origin: {fileID: 906200825930210171}
   radius: 0.08
+  topApproachDot: 0.5
 --- !u!114 &1849148516473683365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abee63302fdc2bb4f80efe129df0a723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hand: {fileID: 0}
+  _hand: {fileID: 8017548299137120160}
   _handJointId: 8
   _localPositionOffset: {x: 0.017, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}

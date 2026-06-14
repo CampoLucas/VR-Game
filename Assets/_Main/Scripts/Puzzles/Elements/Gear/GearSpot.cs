@@ -34,7 +34,7 @@ public class GearSpot : MonoBehaviour
     }
     public void RemoveGear() 
     {
-        currentGear.SetRotatingLogic(false, 0);
+        if (currentGear) currentGear.SetRotatingLogic(false, 0);
         currentGear = null;
         hasGear = false;
         gearPuzzle.CheckSolution();

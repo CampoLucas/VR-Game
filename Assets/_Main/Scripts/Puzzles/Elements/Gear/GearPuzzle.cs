@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GearPuzzle : MonoBehaviour
 {
-    [SerializeField] private List<GearSpot> snapTriggers = new List<GearSpot>();
+    [SerializeField] private List<GearSpot> snapTriggers = new();
     [SerializeField] private bool isCorrect = true;
     [SerializeField] private bool puzzleSolved = false;
     // Start is called before the first frame update
