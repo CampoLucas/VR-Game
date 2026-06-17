@@ -5,6 +5,7 @@ using UnityEngine;
 public class LeverStateTrigger : MonoBehaviour
 {
     [SerializeField] private LeverController controller;
+    [SerializeField] private AudioSource audio;
     [SerializeField] private string targetTag;
     [SerializeField] private int code;
     [SerializeField] private int nullCode;
@@ -13,6 +14,7 @@ public class LeverStateTrigger : MonoBehaviour
     {
         if(other.tag == targetTag) 
         {
+            audio.Play();
             controller.LeverStateChanged(code);
         }
     }

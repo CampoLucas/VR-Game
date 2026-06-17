@@ -9,7 +9,7 @@ using VRGame.Puzzles.Elements.Button;
 
 namespace VRGame.Puzzles
 {
-    public class MemoryPuzzle : MonoBehaviour
+    public class MemoryPuzzle : MonoBehaviour, IPuzzleInterface
     {
         [Header("Settings")]
         [SerializeField] private int sequenceLength = 4;
@@ -29,6 +29,7 @@ namespace VRGame.Puzzles
         private bool _playing;
         private int _playIndex;
         private float _timer;
+        private bool _isResolved = false;
 
         private readonly List<IObserver<int, bool>> _observers = new();
 
@@ -138,6 +139,7 @@ namespace VRGame.Puzzles
             if (_currentIndex >= _sequence.Length)
             {
                 _acceptingInput = false;
+                _isResolved = true;
                 onSuccess.Invoke();
             }
         }
@@ -150,6 +152,11 @@ namespace VRGame.Puzzles
             }
  
             return null;
+        }
+
+        public bool GetIsResolved()
+        {
+            return _isResolved;
         }
     }
 }

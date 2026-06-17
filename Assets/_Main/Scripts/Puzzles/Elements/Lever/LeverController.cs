@@ -6,6 +6,7 @@ public class LeverController : MonoBehaviour
 {
     [SerializeField] private LeverPuzzleManager manager;
     [SerializeField] private GameObject lever;
+    [SerializeField] private AudioSource audio;
     [SerializeField] private string activatorTag;
     [SerializeField] private int state = 2;
 
@@ -25,6 +26,7 @@ public class LeverController : MonoBehaviour
             {
                 other.gameObject.SetActive(false);
                 lever.SetActive(true);
+                audio.Play();
             }
         }
     }

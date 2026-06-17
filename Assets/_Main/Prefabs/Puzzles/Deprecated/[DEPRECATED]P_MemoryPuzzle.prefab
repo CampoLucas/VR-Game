@@ -58,7 +58,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VRGame.Puzzles.Elements.SetEmission, Assembly-CSharp
-        m_MethodName: SetEmissionColorA
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -83,7 +83,7 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VRGame.Puzzles.Elements.Button.ButtonPresenter,
           Assembly-CSharp
-        m_MethodName: SetDisabled
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VRGame.Puzzles.Elements.Button.ButtonPresenter,
           Assembly-CSharp
-        m_MethodName: SetDisabled
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VRGame.Puzzles.Elements.SetEmission, Assembly-CSharp
-        m_MethodName: SetEmissionColorB
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

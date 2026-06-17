@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class GearPuzzle : MonoBehaviour
+public class GearPuzzle : MonoBehaviour, IPuzzleInterface
 {
-    [SerializeField] private List<GearSpot> snapTriggers = new();
+    [SerializeField] private List<GearSpot> snapTriggers = new List<GearSpot>();
+    [SerializeField] private Gear startGear;
+    [SerializeField] private Gear endGear;
+    [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private bool isCorrect = true;
-    [SerializeField] private bool puzzleSolved = false;
+    [SerializeField] private bool isResolved = false;
+    [SerializeField] private UnityEvent onSucces;
+
     // Start is called before the first frame update
+    private void Start()
+    {
+        startGear.SetRotatingLogic(true, -rotationSpeed);
+    }
     public void CheckSolution() 
     {
         isCorrect = true;
@@ -15,12 +25,26 @@ public class GearPuzzle : MonoBehaviour
         {
             if (snapTriggers[i].HasGear) 
             {
-                if (i == 0) snapTriggers[i].CurrentGear.SetRotatingLogic(true, Mathf.Pow(-1,i) * 10);
-                else 
+                if (i == 0) 
                 {
-                    if (snapTriggers[i - 1].HasGear) 
+                    if (!snapTriggers[i].CurrentGear.IsRotating)
                     {
-                        if (snapTriggers[i - 1].CurrentGear.IsRotating) snapTriggers[i].CurrentGear.SetRotatingLogic(true, Mathf.Pow(-1, i) * 10);
+                        snapTriggers[i].CurrentGear.SetRotationOffSet(-startGear.GetCurrentRotationY()+90f);
+                        snapTriggers[i].CurrentGear.SetRotatingLogic(true, Mathf.Pow(-1, i) * rotationSpeed);
+                    }
+                }
+                else
+                {
+                    if (snapTriggers[i - 1].HasGear)
+                    {
+                        if (snapTriggers[i - 1].CurrentGear.IsRotating) 
+                        {
+                            if (!snapTriggers[i].CurrentGear.IsRotating)
+                            {
+                                snapTriggers[i].CurrentGear.SetRotationOffSet(-snapTriggers[i - 1].CurrentGear.GetCurrentRotationY()+90f);
+                                snapTriggers[i].CurrentGear.SetRotatingLogic(true, Mathf.Pow(-1, i) * rotationSpeed);
+                            }
+                        }
                         else snapTriggers[i].CurrentGear.SetRotatingLogic(false, 0);
                     }
                     else snapTriggers[i].CurrentGear.SetRotatingLogic(false, 0);
@@ -31,6 +55,21 @@ public class GearPuzzle : MonoBehaviour
                 isCorrect = false;
             }
         }
-        Debug.Log(isCorrect);
+        if (isCorrect)
+        {
+            endGear.SetRotationOffSet(startGear.GetCurrentRotationY() + 90f);
+            endGear.SetRotatingLogic(true, -rotationSpeed);
+            isResolved = true;
+            onSucces.Invoke();
+        }
+        else 
+        {
+            endGear.SetRotatingLogic(false, 0); 
+            isResolved = false;
+        }
+    }
+    public bool GetIsResolved() 
+    {
+        return isResolved;
     }
 }
