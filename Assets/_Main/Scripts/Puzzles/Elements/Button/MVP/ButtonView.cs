@@ -29,15 +29,12 @@ namespace VRGame.Puzzles.Elements.Button
         private MaterialPropertyBlock _block;
         private static readonly int ColorID = Shader.PropertyToID("_BaseColor");
         private static readonly int EmissionID = Shader.PropertyToID("_EmissionColor");
-        //private static readonly string EmissionKeyword = "_EMISSION";
         
-        // Color lerp
         private Color _colorFrom;
         private Color _colorTo;
         private float _colorElapsed;
         private bool _colorLerping;
         
-        // Emission lerp
         private Color _emissionFrom;
         private Color _emissionTo;
         private float _emissionElapsed;
@@ -104,8 +101,6 @@ namespace VRGame.Puzzles.Elements.Button
             _emissionDuration = highlightInDuration;
             _highlightFadingOut = false;
             _emissionLerping = true;
-            
-            //targetRenderer.material.EnableKeyword(EmissionKeyword);
         }
         
         private void TickColor(float delta)
@@ -148,7 +143,6 @@ namespace VRGame.Puzzles.Elements.Button
             else
             {
                 _emissionLerping = false;
-                //targetRenderer.material.DisableKeyword("_EMISSION");
             }
         }
 

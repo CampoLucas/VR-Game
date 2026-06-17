@@ -7,7 +7,7 @@ public class GearPuzzle : MonoBehaviour
     [SerializeField] private List<GearSpot> snapTriggers = new List<GearSpot>();
     [SerializeField] private bool isCorrect = true;
     [SerializeField] private bool puzzleSolved = false;
-    // Start is called before the first frame update
+    
     public void CheckSolution() 
     {
         isCorrect = true;
@@ -31,6 +31,5 @@ public class GearPuzzle : MonoBehaviour
                 isCorrect = false;
             }
         }
-        Debug.Log(isCorrect);
     }
 }
