@@ -9,8 +9,10 @@ using VRGame.Puzzles.Elements.Button;
 
 namespace VRGame.Puzzles
 {
-    public class MemoryPuzzle : MonoBehaviour, IPuzzleInterface
+    public class MemoryPuzzle : Puzzle
     {
+        public bool ResolvedState { get; }
+        
         [Header("Settings")]
         [SerializeField] private int sequenceLength = 4;
         [SerializeField] private float delayBetween = 1f;
@@ -29,12 +31,12 @@ namespace VRGame.Puzzles
         private bool _playing;
         private int _playIndex;
         private float _timer;
-        private bool _isResolved = false;
 
         private readonly List<IObserver<int, bool>> _observers = new();
 
-        private void Awake()
+        protected sealed override void Awake()
         {
+            base.Awake();
             foreach (var button in buttons)
             {
                 var observer = new ActionObserver<int, bool>(OnButtonPressed);
@@ -62,7 +64,7 @@ namespace VRGame.Puzzles
             _timer = delayBetween;
         }
         
-        private void OnDestroy()
+        protected sealed override void OnDestroy()
         {
             for (var i = 0; i < buttons.Count; i++)
             {
@@ -75,6 +77,7 @@ namespace VRGame.Puzzles
             }
  
             _observers.Clear();
+            base.OnDestroy();
         }
         
         public void RegenerateSequence()
@@ -131,6 +134,7 @@ namespace VRGame.Puzzles
             {
                 _acceptingInput = false;
                 onFailure.Invoke();
+                SolvedState = false;
                 return;
             }
  
@@ -139,7 +143,7 @@ namespace VRGame.Puzzles
             if (_currentIndex >= _sequence.Length)
             {
                 _acceptingInput = false;
-                _isResolved = true;
+                SolvedState = true;
                 onSuccess.Invoke();
             }
         }
@@ -152,11 +156,6 @@ namespace VRGame.Puzzles
             }
  
             return null;
-        }
-
-        public bool GetIsResolved()
-        {
-            return _isResolved;
         }
     }
 }

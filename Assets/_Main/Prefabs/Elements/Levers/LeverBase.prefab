@@ -563,7 +563,6 @@ GameObject:
   - component: {fileID: 6066018431866343193}
   - component: {fileID: 7437790100191431069}
   - component: {fileID: 4702703948621035045}
-  - component: {fileID: 2544944948924919412}
   - component: {fileID: 141103043104962305}
   m_Layer: 0
   m_Name: LeverBase
@@ -663,23 +662,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21283619, y: 0.16722757, z: 0.2667243}
   m_Center: {x: 0, y: 0.024141748, z: 0}
---- !u!114 &2544944948924919412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979682013276227994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb9626fb8885c0c48b5c0a47ee72c0ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  lever: {fileID: 6635581615121230343}
-  audio: {fileID: 141103043104962305}
-  activatorTag: BrokenLever
-  state: 2
 --- !u!82 &141103043104962305
 AudioSource:
   m_ObjectHideFlags: 0
@@ -843,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bae3a3083f28704c95d097666f4cf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 2544944948924919412}
+  controller: {fileID: 0}
   audio: {fileID: 1722973551638012699}
   targetTag: Lever
   code: 1
@@ -1011,7 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bae3a3083f28704c95d097666f4cf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 2544944948924919412}
+  controller: {fileID: 0}
   audio: {fileID: 2833895466435536018}
   targetTag: Lever
   code: 0
