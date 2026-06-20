@@ -16,8 +16,8 @@ namespace VRGame.UI.Menu
             
             if (!manager)
             {
-                Debug.LogError("[MenuController] SceneLoader no encontrado. " +
-                               "Añade el componente SceneLoader a un GameObject en la escena.");
+                Debug.LogError("[MenuController] LevelManager not found. " +
+                               "Add the LevelManager component to a GameObject in the scene.");
                 return;
             }
 
@@ -26,9 +26,18 @@ namespace VRGame.UI.Menu
                 return;
             }
 
-            Debug.Log($"[MenuController] Cargando escena: {gameSceneName}");
+            Debug.Log($"[MenuController] Loading scene: {gameSceneName}");
             manager.TransitionToScene(gameSceneName);
-            //SceneLoader.Instance.LoadScene(gameSceneName);
+        }
+
+        public void OnQuitButtonPressed()
+        {
+            Debug.Log("[MenuController] Quitting game...");
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
         }
 
         #endregion
