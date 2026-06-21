@@ -26,7 +26,15 @@ namespace VRGame.Puzzles
                 if (_isEnabled == value) return;
                 _isEnabled = value;
                 OnEnabledSubject.NotifyAll(id, value);
-                if (_isEnabled && _puzzleSolved) NotifyAll(id, SolvedState);
+                
+                if (_isEnabled)
+                {
+                    if (_puzzleSolved) NotifyAll(id, SolvedState);
+                }
+                else if (_puzzleSolved)
+                {
+                    NotifyAll(id, false);
+                }
             }
         }
 
@@ -56,7 +64,7 @@ namespace VRGame.Puzzles
 
         public void SetEnabled(bool isEnabled)
         {
-            Debug.Log($"Test: Set enabled {isEnabled}");
+            Debug.Log($"Test: Set enabled {isEnabled}", gameObject);
             IsEnabled = isEnabled;
         }
         

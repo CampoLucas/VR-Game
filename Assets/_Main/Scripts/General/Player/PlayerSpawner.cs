@@ -18,7 +18,7 @@ namespace VRGame.Player
                 locomotor = FindObjectOfType<FirstPersonLocomotor>();
             }
 
-            Spawn();
+            //Spawn();
         }
 
         private void OnValidate()

@@ -42,10 +42,11 @@ namespace VRGame.Puzzles
         private void Start()
         {
             puzzle.Attach(this);
+            puzzle.OnEnabledSubject.Attach(this);
             ApplyState(GetState(), true);
         }
  
-        public void OnNotify(int id, bool isResolved)
+        public void OnNotify(int id, bool state)
         {
             ApplyState(GetState());
         }
@@ -83,6 +84,7 @@ namespace VRGame.Puzzles
         private void OnDestroy()
         {
             puzzle.Detach(this);
+            puzzle.OnEnabledSubject?.Detach(this);
         }
     }
 }

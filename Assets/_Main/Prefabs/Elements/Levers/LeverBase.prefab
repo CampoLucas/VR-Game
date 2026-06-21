@@ -135,7 +135,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1719678741374931158
 Transform:
@@ -241,7 +241,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1595947780545614681
 Transform:
@@ -560,6 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9051758665648491702}
+  - component: {fileID: 846822683623666246}
   - component: {fileID: 6066018431866343193}
   - component: {fileID: 7437790100191431069}
   - component: {fileID: 4702703948621035045}
@@ -569,7 +570,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9051758665648491702
 Transform:
@@ -585,12 +586,28 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7885403782217533388}
-  - {fileID: 6004852174472916532}
   - {fileID: 7313540263818830639}
+  - {fileID: 6004852174472916532}
   - {fileID: 1719678741374931158}
   - {fileID: 1595947780545614681}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &846822683623666246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979682013276227994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9626fb8885c0c48b5c0a47ee72c0ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  lever: {fileID: 6635581615121230343}
+  sfx: {fileID: 141103043104962305}
+  activatorTag: BrokenLever
 --- !u!33 &6066018431866343193
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -771,7 +788,7 @@ GameObject:
   - component: {fileID: 6730407397006492820}
   - component: {fileID: 1722973551638012699}
   m_Layer: 0
-  m_Name: Up Trigger
+  m_Name: Down Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -787,7 +804,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.075, z: 0.15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.5814, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9051758665648491702}
@@ -825,11 +842,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bae3a3083f28704c95d097666f4cf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 846822683623666246}
   audio: {fileID: 1722973551638012699}
   targetTag: Lever
-  code: 1
-  nullCode: 2
+  state: 2
 --- !u!82 &1722973551638012699
 AudioSource:
   m_ObjectHideFlags: 0
@@ -939,7 +955,7 @@ GameObject:
   - component: {fileID: 1220515655117903087}
   - component: {fileID: 2833895466435536018}
   m_Layer: 0
-  m_Name: Down Trigger
+  m_Name: Up Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -955,7 +971,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.075, z: -0.15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.9737, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9051758665648491702}
@@ -993,11 +1009,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bae3a3083f28704c95d097666f4cf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 846822683623666246}
   audio: {fileID: 2833895466435536018}
   targetTag: Lever
-  code: 0
-  nullCode: 2
+  state: 1
 --- !u!82 &2833895466435536018
 AudioSource:
   m_ObjectHideFlags: 0

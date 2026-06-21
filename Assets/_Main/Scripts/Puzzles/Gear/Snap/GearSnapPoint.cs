@@ -5,10 +5,11 @@ using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Serialization;
 using VRGame.DesignPatterns.Observers;
+using VRGame.Puzzles;
 
 namespace VRGame.General.Interactables
 {
-    public class GearSnapPoint : SnapInteractable
+    public class GearSnapPoint : SnapInteractable, IGameObjectFilter
     {
         public float RotSpeed => rotator ? rotator.RotSpeed : rotationSpeed;
         public bool RotDir => rotator ? !rotator.RotDir : invertDirection;
@@ -229,6 +230,11 @@ namespace VRGame.General.Interactables
 
             var pos = TransformOffset(transform);
             Gizmos.DrawSphere(pos, .01f);
+        }
+
+        public bool Filter(GameObject gameObject)
+        {
+            return IsFree();
         }
     }
 

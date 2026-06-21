@@ -3,54 +3,72 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
+using VRGame.DesignPatterns.Observers;
 using VRGame.Puzzles;
 
 public class LeverPuzzle : Puzzle
 {
-    [SerializeField] private List<LeverController> levers;
-    [SerializeField] private List<int> leverStates;
-    [SerializeField] private List<MeshRenderer> leverIndicators;
+    [System.Serializable]
+    public class LeverData : IDisposable
+    {
+        [field: SerializeField] public Lever Lever { get; private set; }
+        [field: SerializeField] public MeshRenderer Indicator { get; private set; }
+        public LeverState TargetState { get; private set; }
+
+        public void Init(Material upMat, Material downMat)
+        {
+            TargetState = UnityEngine.Random.value > 0.5f ? LeverState.Up : LeverState.Down;
+            Indicator.material = TargetState == LeverState.Up ? upMat : downMat;
+        }
+
+        public void Dispose()
+        {
+            Lever = null;
+            Indicator = null;
+        }
+    }
+    
+    [Header("Levers")]
+    [FormerlySerializedAs("leverDatas")] [SerializeField] private List<LeverData> leversData;
+    
+    [Header("Visuals")]
     [SerializeField] private Material upMaterial;
     [SerializeField] private Material downMaterial;
-    [SerializeField] private bool correctCombination;
     
     [Header("Events")]
-    [SerializeField] private UnityEvent onSucces;
+    [FormerlySerializedAs("onSucces")] [SerializeField] private UnityEvent onSuccess;
 
+    private IObserver<int, LeverState> _observer;
 
-    protected sealed override void Awake()
+    protected override void Awake()
     {
         base.Awake();
-        leverStates = new List<int>();
-    }
-    
-    void Start()
-    {
-        for (var i = 0; i < levers.Count; i++) 
+
+        for (var i = 0; i < leversData.Count; i++)
         {
-            leverStates.Add(UnityEngine.Random.Range(0, 2));
-            if (leverStates[i] > 0)
-            {
-                leverIndicators[i].material = upMaterial;
-            }
-            else 
-            { 
-                leverIndicators[i].material = downMaterial;
-            }
+            leversData[i].Init(upMaterial, downMaterial);
+        }
+        
+        _observer = new LeverObserver(leversData, OnSuccess);
+        
+        for (var i = 0; i < leversData.Count; i++)
+        {
+            leversData[i].Lever.OnLeverStateChanged.Attach(_observer);
+        }
+
+        for (var i = 0; i < leversData.Count; i++)
+        {
+            Debug.Log($"Test: target = {leversData[i].TargetState}");
         }
     }
-    
-    public void CheckLeversCombination() 
+
+    private void OnSuccess(bool success)
     {
-        correctCombination = true;
-        for (var i = 0; i < levers.Count; i++)
-        {
-            if (levers[i].State != leverStates[i]) correctCombination = false;
-        }
-        if (correctCombination) 
+        if (success)
         {
             SolvedState = true;
-            onSucces.Invoke();
+            onSuccess.Invoke();
         }
         else
         {
@@ -60,18 +78,65 @@ public class LeverPuzzle : Puzzle
 
     protected override void OnDestroy()
     {
-        levers.Clear();
-        leverStates.Clear();
-        leverIndicators.Clear();
-        onSucces.RemoveAllListeners();
+        for (var i = 0; i < leversData.Count; i++)
+        {
+            var data = leversData[i];
+            data.Lever.OnLeverStateChanged.Detach(_observer);
+            data.Dispose();
+        }
+        
+        
+        leversData.Clear();
+        onSuccess.RemoveAllListeners();
+        _observer.Dispose();
 
-        levers = null;
-        leverStates = null;
-        leverIndicators = null;
-        onSucces = null;
+        _observer = null;
+        onSuccess = null;
         upMaterial = null;
         downMaterial = null;
         
         base.OnDestroy();
+    }
+}
+
+public class LeverObserver : IObserver<int, LeverState>
+{
+    private Dictionary<int, LeverState> _targetStates = new();
+    private Dictionary<int, bool> _correctState = new();
+    private Action<bool> _onSuccess;
+    private readonly int _maxLevers;
+    private int _correctLevers;
+    
+    public LeverObserver(List<LeverPuzzle.LeverData> leversData, Action<bool> onSuccess)
+    {
+        _maxLevers = leversData.Count;
+        _onSuccess = onSuccess;
+ 
+        foreach (var leverData in leversData)
+        {
+            _targetStates[leverData.Lever.ID] = leverData.TargetState;
+        }
+    }
+    
+    public void OnNotify(int id, LeverState state)
+    {
+        var isCorrect = state == _targetStates[id];
+        var wasCorrect = _correctState.TryGetValue(id, out var prev) && prev;
+        if (isCorrect == wasCorrect) return;
+ 
+        _correctState[id] = isCorrect;
+        _correctLevers += isCorrect ? 1 : -1;
+ 
+        if (_onSuccess != null) _onSuccess(_correctLevers >= _maxLevers);
+    }
+
+    public void Dispose()
+    {
+        _targetStates.Clear();
+        _correctState.Clear();
+
+        _targetStates = null;
+        _correctState = null;
+        _onSuccess = null;
     }
 }

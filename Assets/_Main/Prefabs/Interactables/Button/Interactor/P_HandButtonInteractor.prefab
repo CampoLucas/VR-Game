@@ -67,7 +67,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   detectionInterval: 0.1
   maxOverlaps: 4
   origin: {fileID: 906200825930210171}
@@ -137,7 +137,7 @@ MonoBehaviour:
   _handJointId: 8
   _localPositionOffset: {x: 0.017, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
-  _jointId: 9
+  _jointId: 0
   _posOffset: {x: 0, y: 0, z: 0.017}
   _rotOffset: {x: 0, y: 0, z: 0, w: 1}
   _useLegacyOrientation: 1

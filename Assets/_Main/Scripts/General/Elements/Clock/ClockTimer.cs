@@ -8,9 +8,9 @@ using VRGame.Level;
 public class ClockTimer : MonoBehaviour
 {
     [SerializeField] private bool countDown = true;
-    [FormerlySerializedAs("textTime")] [SerializeField] private TMP_Text timerText;
+    [SerializeField] private TMP_Text timerText;
     
-    private VRGame.DesignPatterns.Observers.IObserver<float, float> _tickObserver;
+    private IObserver<float, float> _tickObserver;
     
     private void Start()
     {
@@ -32,6 +32,17 @@ public class ClockTimer : MonoBehaviour
     }
 
     
+    public void Stop()
+    {
+        if (!LevelManager.Instance) return;
+        LevelManager.Instance.LevelTimer.Stop();
+    }
+
+    public void Resume()
+    {
+        if (!LevelManager.Instance) return;
+        LevelManager.Instance.LevelTimer.Resume();
+    }
     
     private static string Format(float seconds)
     {

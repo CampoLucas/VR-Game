@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class LeverStateTrigger : MonoBehaviour
 {
-    [SerializeField] private LeverController controller;
+    [SerializeField] private Lever controller;
     [SerializeField] private AudioSource audio;
     [SerializeField] private string targetTag;
-    [SerializeField] private int code;
-    [SerializeField] private int nullCode;
+    [SerializeField] private LeverState state;
     
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == targetTag) 
         {
             audio.Play();
-            controller.LeverStateChanged(code);
+            controller.LeverStateChanged(state);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == targetTag)
         {
-            controller.LeverStateChanged(nullCode);
+            controller.LeverStateChanged(LeverState.Default);
         }
     }
 }

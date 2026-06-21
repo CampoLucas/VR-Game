@@ -2,6 +2,7 @@ using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRGame.Puzzles;
 
 public class GearSpot : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class GearSpot : MonoBehaviour
     }
     public void RemoveGear() 
     {
-        if (currentGear) currentGear.SetRotatingLogic(false, 0);
+        
         currentGear = null;
         hasGear = false;
         gearPuzzle.CheckSolution();

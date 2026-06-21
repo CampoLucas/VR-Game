@@ -82,13 +82,13 @@ public class DoorPuzzleObserver : IObserver<int, bool>
         _door = door;
     }
     
-    public void OnNotify(int id, bool isResolved)
+    public void OnNotify(int id, bool state)
     {
         var wasSolved = _solved.TryGetValue(id, out var value) && value;
-        if (wasSolved == isResolved) return;
+        if (wasSolved == state) return;
 
-        _solved[id] = isResolved;
-        _resolvedPuzzles += isResolved ? 1 : -1;
+        _solved[id] = state;
+        _resolvedPuzzles += state ? 1 : -1;
 
         // When all the puzzles are solved, it opens the door
         if (_resolvedPuzzles >= _maxPuzzles)

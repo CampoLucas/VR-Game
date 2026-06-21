@@ -125,7 +125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2878547941334803783}
   - component: {fileID: 4117288480465618045}
-  - component: {fileID: 8163973773734519040}
   - component: {fileID: 1838827427089651431}
   - component: {fileID: 4523529423276724003}
   m_Layer: 0
@@ -165,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactorFilters:
-  - {fileID: 8163973773734519040}
+  - {fileID: 4117288480465618045}
   _maxInteractors: 1
   _maxSelectingInteractors: 1
   _data: {fileID: 0}
@@ -180,19 +179,6 @@ MonoBehaviour:
   rotationSpeed: 100
   invertDirection: 0
   hoverVisual: {fileID: 618667892439966042}
---- !u!114 &8163973773734519040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847408258737218983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88c6fdf22c3a49b7b170a206490631a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snapPoint: {fileID: 4117288480465618045}
 --- !u!136 &1838827427089651431
 CapsuleCollider:
   m_ObjectHideFlags: 0
