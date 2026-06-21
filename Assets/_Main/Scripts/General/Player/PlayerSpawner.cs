@@ -18,7 +18,7 @@ namespace VRGame.Player
                 locomotor = FindObjectOfType<FirstPersonLocomotor>();
             }
 
-            //Spawn();
+            Spawn();
         }
 
         private void OnValidate()
@@ -37,6 +37,11 @@ namespace VRGame.Player
 
         private void Spawn(Transform target)
         {
+            // 1. RECENTRAR EL HEADSET: Borra el offset del guardián acumulado por el movimiento físico en la vida real
+            if (OVRManager.display != null)
+            {
+                OVRManager.display.RecenterPose();
+            }
             var pose = new Pose(target.position, target.rotation);
             var locomotionEvent = new LocomotionEvent(0, pose, LocomotionEvent.TranslationType.Absolute, LocomotionEvent.RotationType.Absolute);
             locomotor.HandleLocomotionEvent(locomotionEvent);
