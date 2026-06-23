@@ -5,7 +5,7 @@ using VRGame.General.Interactables;
 
 namespace VRGame.Puzzles
 {
-    public class Gear : MonoBehaviour
+    public class Gear : MonoBehaviour, IBoundedObject
     {
 
         public SnapInteractor Interactor => interactor;
@@ -19,6 +19,8 @@ namespace VRGame.Puzzles
         [SerializeField] private Rigidbody rb;
 
         private Transform _transform;
+        private Vector3 _startPos;
+        private Quaternion _startRot;
 
 
         private void Awake()
@@ -28,6 +30,9 @@ namespace VRGame.Puzzles
             if (!rb) rb = GetComponent<Rigidbody>();
 
             _transform.SetParent(parent);
+
+            _startPos = _transform.position;
+            _startRot = _transform.rotation;
         }
 
         public void SnapOn(SnapParams gearSnapPoint)
@@ -55,6 +60,28 @@ namespace VRGame.Puzzles
 
 
             _transform.SetParent(parent);
+        }
+
+        public void Reposition()
+        {
+            // Disable interactables
+            interactables.SetActive(false);
+            
+            // Set rigibody to kinematic
+            rb.isKinematic = true;
+            
+            // Kill all momentum
+            rb.velocity = Vector3.zero;
+            
+            // Change position
+            _transform.position = _startPos;
+            _transform.rotation = _startRot;
+            
+            // Set rigidboy to not kinematic
+            rb.isKinematic = false;
+            
+            // Enable interactables
+            interactables.SetActive(true);
         }
     }
 }

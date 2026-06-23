@@ -593,10 +593,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30026231d7ad4ab43a49461f01e7cd8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRotating: 0
-  gearDiameter: 0
-  rotationSpeed: 0
-  visualsGO: {fileID: 1434644221875636945}
   parent: {fileID: 0}
   grabbable: {fileID: 3435838473367011755}
   interactables: {fileID: 3969138192029709426}
@@ -725,11 +721,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81433636f44e2ff41ae95ac1798f7bb7, type: 3}
---- !u!1 &1434644221875636945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 81433636f44e2ff41ae95ac1798f7bb7, type: 3}
-  m_PrefabInstance: {fileID: 2245475974503987072}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1775317641033322603 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 81433636f44e2ff41ae95ac1798f7bb7, type: 3}

@@ -1727,6 +1727,7 @@ GameObject:
   - component: {fileID: 6164878217404623945}
   - component: {fileID: 1872901041450046436}
   - component: {fileID: 6799791130632997351}
+  - component: {fileID: 497197948239531791}
   m_Layer: 0
   m_Name: Bounds
   m_TagString: Untagged
@@ -1814,12 +1815,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &497197948239531791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359587501787712543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9ba5b2e70c7904cb85af33c1792672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5414912695649231197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +3299,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2857994604104021784}
     m_Modifications:
+    - target: {fileID: 1876964350274812610, guid: e2c87b16b10e12047b93f15bad29bfb5, type: 3}
+      propertyPath: instanceId
+      value: 38332b7b-40d3-485b-8859-f401380c39a1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970517688797796463, guid: e2c87b16b10e12047b93f15bad29bfb5, type: 3}
+      propertyPath: instanceId
+      value: 508f7482-8b1a-43a8-82d8-d2f1aa7f3531
+      objectReference: {fileID: 0}
     - target: {fileID: 1973481006535669655, guid: e2c87b16b10e12047b93f15bad29bfb5, type: 3}
       propertyPath: onNormal.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3294,6 +3315,14 @@ PrefabInstance:
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1698143542355489606}
+    - target: {fileID: 2189799461003154247, guid: e2c87b16b10e12047b93f15bad29bfb5, type: 3}
+      propertyPath: instanceId
+      value: e5545e74-a3a9-4d96-96cf-853438842c0f
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249342705311576554, guid: e2c87b16b10e12047b93f15bad29bfb5, type: 3}
+      propertyPath: instanceId
+      value: 99a3f0a0-5b81-4a1c-9200-e51cf03863b9
+      objectReference: {fileID: 0}
     - target: {fileID: 3377365842150302603, guid: e2c87b16b10e12047b93f15bad29bfb5, type: 3}
       propertyPath: m_Name
       value: P_LeverPuzzle
@@ -3446,6 +3475,10 @@ PrefabInstance:
     - target: {fileID: 239605355873667078, guid: 514c7e65e3b03eb4d811f2e46b73dc0a, type: 3}
       propertyPath: m_Name
       value: BrokenLever
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390700689392011583, guid: 514c7e65e3b03eb4d811f2e46b73dc0a, type: 3}
+      propertyPath: instanceId
+      value: 6d7c8a8f-fb48-4571-b5aa-634da29df415
       objectReference: {fileID: 0}
     - target: {fileID: 4460739090181728589, guid: 514c7e65e3b03eb4d811f2e46b73dc0a, type: 3}
       propertyPath: m_LocalPosition.x
