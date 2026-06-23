@@ -7,7 +7,7 @@ namespace VRGame.Puzzles
 {
     public class Gear : MonoBehaviour, IBoundedObject
     {
-
+        public int BoundedInstanceID => GetInstanceID();
         public SnapInteractor Interactor => interactor;
 
         [Header("References")]
@@ -68,11 +68,11 @@ namespace VRGame.Puzzles
             grabbable.enabled = false;
             interactables.SetActive(false);
             
-            // Set rigibody to kinematic
-            rb.isKinematic = true;
-            
             // Kill all momentum
             rb.velocity = Vector3.zero;
+            
+            // Set rigibody to kinematic
+            rb.isKinematic = true;
             
             // Change position
             _transform.position = _startPos;
@@ -85,5 +85,7 @@ namespace VRGame.Puzzles
             grabbable.enabled = true;
             interactables.SetActive(true);
         }
+        
+        public bool IgnoreReposition() => grabbable.SelectingPointsCount > 0;
     }
 }
