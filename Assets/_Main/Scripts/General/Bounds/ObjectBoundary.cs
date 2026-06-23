@@ -6,7 +6,13 @@ using UnityEngine;
 public class ObjectBoundary : MonoBehaviour
 {
     private readonly HashSet<int> _cachedRepositioned = new();
-    
+    private Collider _collider;
+
+    private void Awake()
+    {
+        _collider = GetComponent<Collider>();
+    }
+
     private void LateUpdate()
     {
         _cachedRepositioned.Clear();
@@ -16,6 +22,7 @@ public class ObjectBoundary : MonoBehaviour
     {
         if (!other.TryGetComponent<IBoundedObject>(out var bounded) || 
             bounded.IgnoreReposition() ||
+            _collider.bounds.Contains(other.bounds.center) ||
             !_cachedRepositioned.Add(bounded.BoundedInstanceID))
         {
             return;

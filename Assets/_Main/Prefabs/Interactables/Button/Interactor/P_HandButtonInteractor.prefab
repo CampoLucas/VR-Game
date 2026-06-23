@@ -68,7 +68,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
-  detectionInterval: 0.1
+  detectionInterval: 0.05
   maxOverlaps: 4
   origin: {fileID: 906200825930210171}
   radius: 0.06
