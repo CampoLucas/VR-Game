@@ -10,10 +10,6 @@ namespace VRGame.Player
     {
         [SerializeField] private FirstPersonLocomotor locomotor;
         [SerializeField] private Transform targetAnchor;
-        
-        
-        [SerializeField] private OVRCameraRig cameraRig;
-        [SerializeField] private CharacterController playerController;
 
         private void Awake()
         {
