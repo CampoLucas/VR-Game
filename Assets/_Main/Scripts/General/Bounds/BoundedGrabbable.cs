@@ -4,8 +4,10 @@ using UnityEngine;
 
 namespace VRGame.General.Bounds
 {
-    public class BoundedObject : MonoBehaviour, IBoundedObject
+    public class BoundedGrabbable : MonoBehaviour, IBoundedObject
     {
+        public int BoundedInstanceID => GetInstanceID();
+
         [Header("References")]
         [SerializeField] private Grabbable grabbable;
         [SerializeField] private GameObject interactables;
@@ -24,15 +26,20 @@ namespace VRGame.General.Bounds
         
         public void Reposition()
         {
+            if (grabbable.SelectingPointsCount > 0)
+            {
+                return;
+            }
+            
             // Disable interactables
             grabbable.enabled = false;
             interactables.SetActive(false);
             
-            // Set rigibody to kinematic
-            rb.isKinematic = true;
-            
             // Kill all momentum
             rb.velocity = Vector3.zero;
+            
+            // Set rigibody to kinematic
+            rb.isKinematic = true;
             
             // Change position
             _transform.position = _startPos;
@@ -45,6 +52,8 @@ namespace VRGame.General.Bounds
             grabbable.enabled = true;
             interactables.SetActive(true);
         }
+
+        public bool IgnoreReposition() => grabbable.SelectingPointsCount > 0;
 
         private void OnDestroy()
         {
