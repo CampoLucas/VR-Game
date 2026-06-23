@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 12511681}
   - component: {fileID: 12511680}
   - component: {fileID: 12511682}
+  - component: {fileID: 12511684}
+  - component: {fileID: 12511683}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -259,6 +261,41 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &12511683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12511678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7110642a7af6d4a9cf87be6f69ea5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 12511679}
+  geometryMask:
+    serializedVersion: 2
+    m_Bits: 256
+  probeRadius: 0.12
+  screenFade: {fileID: 12511684}
+  fadeDuration: 0.15
+--- !u!114 &12511684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12511678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 2
+  fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  fadeOnStart: 1
+  renderQueue: 5000
 --- !u!1 &209645656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1201,7 @@ GameObject:
   - component: {fileID: 1918729508}
   - component: {fileID: 1918729507}
   - component: {fileID: 1918729506}
+  - component: {fileID: 1918729511}
   m_Layer: 0
   m_Name: '[BuildingBlock] Camera Rig'
   m_TagString: Untagged
@@ -1332,6 +1370,30 @@ Transform:
   - {fileID: 1504345334}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1918729511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918729505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7c4416b2ba3ff46aa1303a54125082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 12511679}
+  rigRoot: {fileID: 1918729510}
+  headRadius: 0.12
+  skinWidth: 0.01
+  blockingMask:
+    serializedVersion: 2
+    m_Bits: 256
+  maxCorrectionSpeed: 12
+  correctionDeadzone: 0.002
+  depenetrationIterations: 3
+  maxOverlaps: 8
+  teleportThreshold: 0.5
 --- !u!1 &1942858245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1608,10 @@ PrefabInstance:
       propertyPath: _ovrCameraRig
       value: 
       objectReference: {fileID: 1918729508}
+    - target: {fileID: 3302506873128656375, guid: 235f65ff1982b4c47a36bfa93791d232, type: 3}
+      propertyPath: _layerMask.m_Bits
+      value: 279
+      objectReference: {fileID: 0}
     - target: {fileID: 3468542806818835784, guid: 235f65ff1982b4c47a36bfa93791d232, type: 3}
       propertyPath: _interactors.Array.data[13]
       value: 
