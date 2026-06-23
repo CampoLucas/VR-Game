@@ -25,15 +25,15 @@ namespace VRGame.Puzzles
             {
                 if (_isEnabled == value) return;
                 _isEnabled = value;
-                OnEnabledSubject.NotifyAll(id, value);
+                NotifyEnabled(value);
                 
                 if (_isEnabled)
                 {
-                    if (_puzzleSolved) NotifyAll(id, SolvedState);
+                    if (_puzzleSolved) NotifySolved(SolvedState);
                 }
                 else if (_puzzleSolved)
                 {
-                    NotifyAll(id, false);
+                    NotifySolved(false);
                 }
             }
         }
@@ -91,6 +91,55 @@ namespace VRGame.Puzzles
         public void NotifyAll(int id, bool arg)
         {
             _onSolved?.NotifyAll(id, arg);
+        }
+
+        protected virtual void OnPuzzleSolved()
+        {
+            
+        }
+
+        protected virtual void OnPuzzleUnsolved()
+        {
+            
+        }
+
+        protected virtual void OnPuzzleEnabled()
+        {
+            
+        }
+
+        protected virtual void OnPuzzleDisabled()
+        {
+            
+        }
+
+
+        private void NotifyEnabled(bool isEnabled)
+        {
+            OnEnabledSubject.NotifyAll(id, isEnabled);
+            
+            if (isEnabled)
+            {
+                OnPuzzleEnabled();
+            }
+            else
+            {
+                OnPuzzleDisabled();
+            }
+        }
+
+        private void NotifySolved(bool isSolved)
+        {
+            NotifyAll(id, isSolved);
+            
+            if (isSolved)
+            {
+                OnPuzzleSolved();
+            }
+            else
+            {
+                OnPuzzleUnsolved();
+            }
         }
 
         protected virtual void OnDestroy()

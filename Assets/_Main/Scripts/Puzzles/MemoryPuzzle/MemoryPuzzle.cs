@@ -19,6 +19,7 @@ namespace VRGame.Puzzles
 
         [Header("Buttons")]
         [SerializeField] private List<ButtonInteractable> buttons;
+        [SerializeField] private ButtonInteractable onButton;
 
         [Header("Events")]
         [SerializeField] private UnityEvent onSuccess;
@@ -63,7 +64,20 @@ namespace VRGame.Puzzles
             _playIndex++;
             _timer = delayBetween;
         }
-        
+
+        protected override void OnPuzzleDisabled()
+        {
+            SetDisableButtons(true);
+            onButton.SetEnable(false);
+        }
+
+        protected override void OnPuzzleEnabled()
+        {
+            if (SolvedState) return;
+            SetDisableButtons(false);
+            onButton.SetEnable(true);
+        }
+
         protected sealed override void OnDestroy()
         {
             for (var i = 0; i < buttons.Count; i++)

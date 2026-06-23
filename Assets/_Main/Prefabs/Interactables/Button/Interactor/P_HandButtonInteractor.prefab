@@ -71,7 +71,7 @@ MonoBehaviour:
   detectionInterval: 0.1
   maxOverlaps: 4
   origin: {fileID: 906200825930210171}
-  radius: 0.08
+  radius: 0.06
   topApproachDot: 0.5
 --- !u!114 &1849148516473683365
 MonoBehaviour:
