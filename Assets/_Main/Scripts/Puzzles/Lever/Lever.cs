@@ -1,5 +1,6 @@
 using System;using System.Collections;
 using System.Collections.Generic;
+using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Serialization;
 using VRGame.DesignPatterns.Observers;
@@ -49,5 +50,12 @@ public class Lever : MonoBehaviour
     public void Dispose()
     {
         OnLeverStateChanged?.Dispose();
+    }
+
+    
+
+    private void OnDestroy()
+    {
+        Dispose();
     }
 }
