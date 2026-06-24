@@ -312,7 +312,7 @@ MonoBehaviour:
   player: {fileID: 1918729505}
   _collisionLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 769
   _collisionRadius: 0.2
 --- !u!1 &209645656
 GameObject:
@@ -2097,6 +2097,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 765125330835355277, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3709141214610195407, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2108,6 +2112,18 @@ PrefabInstance:
     - target: {fileID: 4242639699129212033, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442664702142867731, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      propertyPath: onOpened.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_AllowTeleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442664702142867731, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      propertyPath: onOpened.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Oculus.Interaction.Locomotion.TeleportInteractable, Oculus.Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442664702142867731, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      propertyPath: onOpened.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5482094052477996362, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2163,8 +2179,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5482094052477996362, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
       insertIndex: -1
       addedObject: {fileID: 372892445}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 765125330835355277, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6118847058634010579}
   m_SourcePrefab: {fileID: 100100000, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+--- !u!1 &6118847058634010578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 765125330835355277, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+  m_PrefabInstance: {fileID: 6118847058634010577}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6118847058634010579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6118847058634010578}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.009100003, y: 0.0015000021, z: 0.020452248}
+  m_Center: {x: 0.0045500034, y: 0.0007499936, z: 0.010226124}
 --- !u!1001 &8302300169008935984
 PrefabInstance:
   m_ObjectHideFlags: 0

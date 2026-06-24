@@ -1274,6 +1274,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 235f65ff1982b4c47a36bfa93791d232, type: 3}
+--- !u!114 &162998395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1835267814787778389, guid: 235f65ff1982b4c47a36bfa93791d232, type: 3}
+  m_PrefabInstance: {fileID: 162998394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6a2955cc1374944a4634c6f312985a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &188176544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,6 +3195,7 @@ GameObject:
   - component: {fileID: 442066152}
   - component: {fileID: 442066151}
   - component: {fileID: 442066150}
+  - component: {fileID: 442066155}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -3344,6 +3356,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 44860157}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &442066155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442066148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7111606242c2cc246bc7ae72d4634492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1480999290}
+  _collisionLayers:
+    serializedVersion: 2
+    m_Bits: 769
+  _collisionRadius: 0.2
 --- !u!1 &454303243
 GameObject:
   m_ObjectHideFlags: 0
@@ -7229,7 +7258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3384e743af5578544be57c808e84f7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locomotor: {fileID: 0}
+  locomotor: {fileID: 162998395}
   targetAnchor: {fileID: 995356571}
 --- !u!4 &1135280941
 Transform:
