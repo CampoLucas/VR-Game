@@ -19,9 +19,11 @@ namespace VRGame.Audio
 
         protected override void OnAwake()
         {
-            _inObserver  = new MusicFadeIn(Source, Volume);
-            _outObserver = new MusicFadeOut(Source, Volume);
- 
+            // InTransition fires while leaving a scene (screen fades to black) -> fade music out.
+            // OutTransition fires when a scene starts (screen reveals) -> fade music in.
+            _inObserver  = new MusicFadeOut(Source, Volume);
+            _outObserver = new MusicFadeIn(Source, Volume);
+
             LevelManager.InTransition.Attach(_inObserver);
             LevelManager.OutTransition.Attach(_outObserver);
         }
@@ -29,6 +31,7 @@ namespace VRGame.Audio
         public void PlayClip(AudioClip clip)
         {
             audioSource.clip = clip;
+            audioSource.volume = musicVolume;
             audioSource.Play();
         }
 
