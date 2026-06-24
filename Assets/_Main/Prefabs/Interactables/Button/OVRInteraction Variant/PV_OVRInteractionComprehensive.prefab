@@ -422,6 +422,10 @@ PrefabInstance:
       propertyPath: _interactableFilters.Array.data[0]
       value: 
       objectReference: {fileID: 277043577271702515}
+    - target: {fileID: 2978571458893240916, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3827058583838783695, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -540,7 +544,7 @@ PrefabInstance:
       objectReference: {fileID: 3162853878063779002}
     - target: {fileID: 5649874818017284984, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5649874818017284986, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _interactableFilters.Array.size
