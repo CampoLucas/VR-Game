@@ -3349,7 +3349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeTime: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
-  fadeOnStart: 0
+  fadeOnStart: 1
   renderQueue: 5000
 --- !u!114 &442066152
 MonoBehaviour:
@@ -3430,7 +3430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c951bad9e5630c45be06dece906440d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenFade: {fileID: 0}
+  screenFade: {fileID: 442066151}
 --- !u!1 &454303243
 GameObject:
   m_ObjectHideFlags: 0
