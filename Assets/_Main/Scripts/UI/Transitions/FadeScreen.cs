@@ -10,13 +10,20 @@ namespace VRGame.UI
 {
     public class FadeScreen : MonoBehaviour
     {
-        [SerializeField] private CanvasGroup canvasGroup;
+        [Header("Fade")]
+        [SerializeField] private OVRScreenFade screenFade;
         
         private DesignPatterns.Observers.IObserver<float> _inObserver;
         private DesignPatterns.Observers.IObserver<float> _outObserver;
- 
+
+        private void Awake()
+        {
+            screenFade = GetComponent<OVRScreenFade>();
+        }
+
         private void Start()
         {
+            if (screenFade == null) return;
             _inObserver = new FadeInObserver(SetAlpha);
             _outObserver = new ActionObserver<float>(t => SetAlpha(1f - t));
  
@@ -28,7 +35,8 @@ namespace VRGame.UI
         
         private void SetAlpha(float alpha)
         {
-            canvasGroup.alpha = alpha;
+            if (screenFade == null) return;
+            screenFade.SetExplicitFade(alpha);
         }
 
         private void OnDestroy()
