@@ -60,7 +60,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.100000024, y: 0.05, z: 0.10000001}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9104694094052421044}
@@ -145,7 +145,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9104694094052421044}
   - {fileID: 7724871546804049467}
@@ -176,8 +176,8 @@ MonoBehaviour:
   currentGear: {fileID: 0}
   origin: {fileID: 9104694094052421044}
   rotator: {fileID: 0}
-  rotationSpeed: 100
-  invertDirection: 0
+  rotationSpeed: 1
+  invertDirection: 1
   hoverVisual: {fileID: 618667892439966042}
 --- !u!136 &1838827427089651431
 CapsuleCollider:

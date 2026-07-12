@@ -28,10 +28,12 @@ Transform:
   m_GameObject: {fileID: 2367510868958648352}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.803829, y: 5.5944777, z: -1.8039938}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.12383, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6896648457406342438}
+  - {fileID: 1846496587928509896}
   m_Father: {fileID: 1029354565011565853}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2900497823115204439
@@ -166,11 +168,11 @@ Transform:
   m_GameObject: {fileID: 4936289930949297483}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.803829, y: 5.691478, z: -1.8039938}
-  m_LocalScale: {x: 0.77373, y: 0.09581097, z: 0.77373}
+  m_LocalPosition: {x: 0, y: 0.78333294, z: 0}
+  m_LocalScale: {x: 0.77373, y: 0.77372986, z: 0.77373}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1029354565011565853}
+  m_Father: {fileID: 4369462270302320708}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3022853580659467640
 MeshFilter:
@@ -261,7 +263,7 @@ GameObject:
   - component: {fileID: 5906289054669270769}
   - component: {fileID: 2792121438710737137}
   m_Layer: 0
-  m_Name: Caja
+  m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,7 +278,7 @@ Transform:
   m_GameObject: {fileID: 5925631689957240406}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.803829, y: 6.1484776, z: -0.048993826}
+  m_LocalPosition: {x: -3.02, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -560,8 +562,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4369462270302320708}
-  - {fileID: 6896648457406342438}
-  - {fileID: 1846496587928509896}
   m_Father: {fileID: 107069705374787284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9087186784992689022
@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 1846496587928509896}
   - component: {fileID: 977754417247187889}
   - component: {fileID: 6105111039348472870}
+  - component: {fileID: 2590194342936584143}
   m_Layer: 0
   m_Name: Detector
   m_TagString: Untagged
@@ -590,12 +591,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9087186784992689022}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.803829, y: 6.0444775, z: -1.8039938}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.6340127, z: 0}
+  m_LocalScale: {x: 1, y: 8.075587, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1029354565011565853}
+  m_Father: {fileID: 4369462270302320708}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &977754417247187889
 BoxCollider:
@@ -630,6 +631,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748a98f073290604593b6e6f1cc705b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  other: {fileID: 0}
   targetBox: {fileID: 1087524376467704425}
   requireNotGrabbed: 1
   plateVisual: {fileID: 6896648457406342438}
@@ -638,3 +641,51 @@ MonoBehaviour:
   onSolved:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2590194342936584143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9087186784992689022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51bc2cc782c4bf99474051036364169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle: {fileID: 6105111039348472870}
+  targetRenderer: {fileID: 0}
+  flipConnectors: 0
+  onDisabled:
+    m_PersistentCalls:
+      m_Calls: []
+  onNormal:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 1f016d1c52f74394ea656f9ef9936d19, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSolved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 797d9cbc33d24e244b3a92edd23463ba, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

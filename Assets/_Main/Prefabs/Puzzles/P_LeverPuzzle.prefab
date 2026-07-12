@@ -346,7 +346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51bc2cc782c4bf99474051036364169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzle: {fileID: 0}
+  puzzle: {fileID: 3524154880081840604}
+  targetRenderer: {fileID: 0}
+  flipConnectors: 0
   onDisabled:
     m_PersistentCalls:
       m_Calls:

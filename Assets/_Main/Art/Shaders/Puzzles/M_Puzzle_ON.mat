@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Puzzle_ON
+  m_Shader: {fileID: 4800000, guid: 933b9ee84f87aad4d8a5c1504f777422, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ENABLED_ON
+  - _OSCILATE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: 4d6889c4a7a80ec4db2e910c0e9bc35c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorMap:
+        m_Texture: {fileID: 2800000, guid: 2bcdf881d88b4b54eb92c603ce0d53ce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emissive:
+        m_Texture: {fileID: 2800000, guid: 47b5496438cacf0429ffae600bd18ba8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T_SequencePuzzle_Base_01:
+        m_Texture: {fileID: 2800000, guid: 81f1715197b1bd645bbbf11c4805f8fe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T_SequencePuzzle_Emission:
+        m_Texture: {fileID: 2800000, guid: 47b5496438cacf0429ffae600bd18ba8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T_SequencePuzzle_Emission_Maks:
+        m_Texture: {fileID: 2800000, guid: 2bcdf881d88b4b54eb92c603ce0d53ce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T_SequencePuzzle_LightMap_Final:
+        m_Texture: {fileID: 2800000, guid: f83fa49d061cd23439178dfb87f24755, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _EmissiveIntensity: 0.2
+    - _Enabled: 1
+    - _Flip: 0
+    - _Float0: 1
+    - _Float1: 0.15
+    - _Float2: 1
+    - _On: 0
+    - _Oscilate: 1
+    - _OscilateSpeed: 5
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _ShadowIntensity: 1
+    m_Colors:
+    - _Color0: {r: 1, g: 0, b: 0, a: 0}
+    - _ColorDissabled: {r: 0.1330445, g: 0.17612204, b: 0.19496846, a: 0}
+    - _ColorOf: {r: 0, g: 1.2053777, b: 1.7411011, a: 0}
+    - _ColorOff: {r: 0.15599993, g: 0.02785714, b: 0.033428535, a: 1}
+    - _ColorOn: {r: 0, g: 1.2053777, b: 1.7411011, a: 0}
+    - _ColorSolved: {r: 0, g: 1.304119, b: 0.4167804, a: 0}
+    - _OscilateRange: {r: -0.1, g: 0.1, b: 0, a: 0}
+  m_BuildTextureStacks: []
