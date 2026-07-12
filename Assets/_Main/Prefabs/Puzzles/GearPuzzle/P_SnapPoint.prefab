@@ -176,7 +176,7 @@ MonoBehaviour:
   currentGear: {fileID: 0}
   origin: {fileID: 9104694094052421044}
   rotator: {fileID: 0}
-  rotationSpeed: 1
+  rotationSpeed: 40
   invertDirection: 1
   hoverVisual: {fileID: 618667892439966042}
 --- !u!136 &1838827427089651431
