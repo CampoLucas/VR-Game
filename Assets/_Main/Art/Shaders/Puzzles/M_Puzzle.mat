@@ -16,7 +16,7 @@ Material:
   - _ENABLED_ON
   - _OSCILATE_ON
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -84,7 +84,7 @@ Material:
     - _Color0: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDissabled: {r: 0.1330445, g: 0.17612204, b: 0.19496846, a: 0}
     - _ColorOf: {r: 0, g: 1.2053777, b: 1.7411011, a: 0}
-    - _ColorOff: {r: 0.1559999, g: 0.02785714, b: 0.033428535, a: 1}
+    - _ColorOff: {r: 0.15599987, g: 0.02785714, b: 0.033428535, a: 1}
     - _ColorOn: {r: 0, g: 1.2053777, b: 1.7411011, a: 0}
     - _ColorSolved: {r: 0, g: 1.304119, b: 0.4167804, a: 0}
     - _OscilateRange: {r: -0.1, g: 0.1, b: 0, a: 0}

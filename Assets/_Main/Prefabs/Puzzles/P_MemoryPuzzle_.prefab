@@ -100,6 +100,10 @@ MonoBehaviour:
   puzzle: {fileID: 3379991548771707663}
   targetRenderer: {fileID: 8363738679398882667}
   flipConnectors: 0
+  wireRenderer: {fileID: 0}
+  materialIndex: 1
+  OnMaterial: {fileID: 2100000, guid: 797d9cbc33d24e244b3a92edd23463ba, type: 2}
+  OffMaterial: {fileID: 2100000, guid: 1f016d1c52f74394ea656f9ef9936d19, type: 2}
   onDisabled:
     m_PersistentCalls:
       m_Calls:
