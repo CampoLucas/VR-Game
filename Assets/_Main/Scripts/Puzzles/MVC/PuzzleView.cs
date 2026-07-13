@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using VRGame.DesignPatterns.Observers;
+using VRGame.Puzzles.Wires;
 
 namespace VRGame.Puzzles
 {
@@ -23,10 +24,7 @@ namespace VRGame.Puzzles
         [SerializeField] private bool flipConnectors = false;
 
         [Header("Wire")]
-        [SerializeField] private Renderer wireRenderer;
-        [SerializeField] private int materialIndex;
-        [SerializeField] private Material OnMaterial;
-        [SerializeField] private Material OffMaterial;
+        [SerializeField] private WireMatRef[] wires;
         
         [Header("Events")]
         [SerializeField] private UnityEvent onDisabled;
@@ -56,7 +54,7 @@ namespace VRGame.Puzzles
                 _flipConnectorBlock = new MaterialPropertyBlock();
             }
 
-            if (wireRenderer)
+            if (wires.Length > 0)
             {
                 _wireIsOnBlock = new MaterialPropertyBlock();
             }
@@ -143,11 +141,25 @@ namespace VRGame.Puzzles
 
         private void Wire(bool state)
         {
-            if (!wireRenderer) return;
+            if (wires.Length == 0) return;
 
-            wireRenderer.GetPropertyBlock(_wireIsOnBlock, materialIndex);
-            _wireIsOnBlock.SetFloat(WireOnPropertyId, state ? 1 : 0);
-            wireRenderer.SetPropertyBlock(_wireIsOnBlock, materialIndex);
+            for (var i = 0; i < wires.Length; i++)
+            {
+                var w = wires[i];
+                if (w == null || !w.Renderer)
+                {
+#if UNITY_EDITOR
+                    Debug.LogError($"ERROR: null reference for the wire at index {i}", this);    
+#endif
+                    return;
+                }
+                
+                w.Renderer.GetPropertyBlock(_wireIsOnBlock, w.MaterialIndex);
+                _wireIsOnBlock.SetFloat(WireOnPropertyId, state ? 1 : 0);
+                w.Renderer.SetPropertyBlock(_wireIsOnBlock, w.MaterialIndex);
+            }
+            
+            
             
             //wireRenderer.materials[materialIndex] = state ? OnMaterial : OffMaterial;
         }

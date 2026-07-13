@@ -8,7 +8,6 @@ Shader "S_LevelAtlas"
 		_T_Atlas_Rooms_LightMap_Direct( "T_Atlas_Rooms_LightMap_Direct", 2D ) = "white" {}
 		_LightColor( "Light Color", Color ) = ( 0, 0, 0, 0 )
 		_ShadowColor( "Shadow Color", Color ) = ( 0, 0, 0, 0 )
-		_Vector0( "Vector 0", Vector ) = ( 1, 0.75, 0.1, 0 )
 
 
 		//_TessPhongStrength( "Tess Phong Strength", Range( 0, 1 ) ) = 0.5
@@ -282,7 +281,6 @@ Shader "S_LevelAtlas"
 			CBUFFER_START(UnityPerMaterial)
 			float4 _ShadowColor;
 			float4 _LightColor;
-			float3 _Vector0;
 			float _AlphaClip;
 			float _Cutoff;
 			#ifdef ASE_TESSELLATION
@@ -296,7 +294,10 @@ Shader "S_LevelAtlas"
 			CBUFFER_END
 
 			sampler2D _T_Atlas_Rooms_Albedo02;
+			float Intensity1;
 			sampler2D _T_Atlas_Rooms_LightMap_Direct;
+			float Intensity2;
+			float Intensity3;
 
 
 			
@@ -471,9 +472,9 @@ Shader "S_LevelAtlas"
 				float3 NormalWS = input.normalWS * renormFactor;
 
 				float3 break4_g18 = tex2D( _T_Atlas_Rooms_LightMap_Direct, input.ase_texcoord3.zw ).rgb;
-				float lerpResult18_g18 = lerp( 0.0 , _Vector0.x , break4_g18.x);
-				float lerpResult21_g18 = lerp( 0.0 , _Vector0.y , break4_g18.y);
-				float lerpResult23_g18 = lerp( 0.0 , _Vector0.z , break4_g18.z);
+				float lerpResult18_g18 = lerp( 0.0 , Intensity1 , break4_g18.x);
+				float lerpResult21_g18 = lerp( 0.0 , Intensity2 , break4_g18.y);
+				float lerpResult23_g18 = lerp( 0.0 , Intensity3 , break4_g18.z);
 				float3 lerpResult7_g18 = lerp( _ShadowColor.rgb , _LightColor.rgb , saturate( ( lerpResult18_g18 + lerpResult21_g18 + lerpResult23_g18 ) ));
 				
 				float3 BakedAlbedo = 0;
@@ -616,7 +617,6 @@ Shader "S_LevelAtlas"
 			CBUFFER_START(UnityPerMaterial)
 			float4 _ShadowColor;
 			float4 _LightColor;
-			float3 _Vector0;
 			float _AlphaClip;
 			float _Cutoff;
 			#ifdef ASE_TESSELLATION
@@ -878,7 +878,6 @@ Shader "S_LevelAtlas"
 			CBUFFER_START(UnityPerMaterial)
 			float4 _ShadowColor;
 			float4 _LightColor;
-			float3 _Vector0;
 			float _AlphaClip;
 			float _Cutoff;
 			#ifdef ASE_TESSELLATION
@@ -1121,7 +1120,6 @@ Shader "S_LevelAtlas"
 			CBUFFER_START(UnityPerMaterial)
 			float4 _ShadowColor;
 			float4 _LightColor;
-			float3 _Vector0;
 			float _AlphaClip;
 			float _Cutoff;
 			#ifdef ASE_TESSELLATION
@@ -1359,7 +1357,6 @@ Shader "S_LevelAtlas"
 			CBUFFER_START(UnityPerMaterial)
 			float4 _ShadowColor;
 			float4 _LightColor;
-			float3 _Vector0;
 			float _AlphaClip;
 			float _Cutoff;
 			#ifdef ASE_TESSELLATION
@@ -1616,7 +1613,6 @@ Shader "S_LevelAtlas"
 			CBUFFER_START(UnityPerMaterial)
 			float4 _ShadowColor;
 			float4 _LightColor;
-			float3 _Vector0;
 			float _AlphaClip;
 			float _Cutoff;
 			#ifdef ASE_TESSELLATION
@@ -1828,7 +1824,7 @@ Node;AmplifyShaderEditor.TextureCoordinatesNode, AmplifyShaderEditor, Version=0.
 Node;AmplifyShaderEditor.TexCoordVertexDataNode, AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;31;-1120,32;Inherit;False;0;2;0;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SamplerNode, AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;12;-864,240;Inherit;True;Property;_T_Atlas_Rooms_LightMap_Direct;T_Atlas_Rooms_LightMap_Direct;1;0;Create;True;0;0;0;False;0;False;-1;4e3b8b942091b8842b1ad094ee4892e6;94a709e4265e8824b904f21d0658558b;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;False;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
 Node;AmplifyShaderEditor.ColorNode, AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;17;-784,448;Inherit;False;Property;_LightColor;Light Color;2;0;Create;True;0;0;0;False;0;False;0,0,0,0;1,0.8,0.6,1;True;True;0;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
-Node;AmplifyShaderEditor.ColorNode, AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;20;-784,640;Inherit;False;Property;_ShadowColor;Shadow Color;3;0;Create;True;0;0;0;False;0;False;0,0,0,0;0.09999994,0.1499999,0.2499999,0;True;True;0;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
+Node;AmplifyShaderEditor.ColorNode, AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;20;-784,640;Inherit;False;Property;_ShadowColor;Shadow Color;3;0;Create;True;0;0;0;False;0;False;0,0,0,0;0.09999988,0.1499999,0.2499999,0;True;True;0;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
 Node;AmplifyShaderEditor.FunctionNode, AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;29;-352,288;Inherit;False;Light Map Animation;-1;;18;132a67ae90a52514b9c43e15be73a267;0;6;1;FLOAT3;0,0,0;False;8;FLOAT3;1,0.8,0.6;False;9;FLOAT3;0.1,0.15,0.25;False;20;FLOAT;1;False;22;FLOAT;1;False;24;FLOAT;1;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.TexCoordVertexDataNode, AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;16;-1104,240;Inherit;False;2;2;0;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.Vector3Node, AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;30;-720,832;Inherit;False;Property;_Vector0;Vector 0;4;0;Create;True;0;0;0;False;0;False;1,0.75,0.1;1,1,1;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
@@ -1848,11 +1844,8 @@ WireConnection;12;1;16;0
 WireConnection;29;1;12;5
 WireConnection;29;8;17;5
 WireConnection;29;9;20;5
-WireConnection;29;20;30;1
-WireConnection;29;22;30;2
-WireConnection;29;24;30;3
 WireConnection;18;0;10;5
 WireConnection;18;1;29;0
 WireConnection;1;2;18;0
 ASEEND*/
-//CHKSM=6165C413C04280052BF6AB7712E0E3F6E452F28F
+//CHKSM=1B52AA4794D97CFB6BA181B8E178577D22B26811

@@ -41,15 +41,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Float0: 0.27
+    - _Float1: 0.19
+    - _Float2: 0.2
     - _IsOn: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     m_Colors:
-    - _Color: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
+    - _Color: {r: 0.15094328, g: 0.15094328, b: 0.15094328, a: 0}
     - _LightColor: {r: 1, g: 0.8, b: 0.6, a: 1}
-    - _OffColor: {r: 0.3882353, g: 0, b: 0.005902156, a: 1}
+    - _OffColor: {r: 0.38823518, g: 0, b: 0.005902156, a: 1}
     - _OnColor: {r: 0.27791223, g: 0.9756498, b: 1.1353015, a: 1}
-    - _ShadowColor: {r: 0.09999994, g: 0.1499999, b: 0.2499999, a: 0}
+    - _ShadowColor: {r: 0.09999982, g: 0.14999977, b: 0.24999973, a: 0}
     - _Vector0: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []

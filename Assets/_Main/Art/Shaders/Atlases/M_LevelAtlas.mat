@@ -52,6 +52,6 @@ Material:
     - _ReceiveShadows: 1
     m_Colors:
     - _LightColor: {r: 1, g: 0.8, b: 0.6, a: 1}
-    - _ShadowColor: {r: 0.09999994, g: 0.14999995, b: 0.24999994, a: 0}
+    - _ShadowColor: {r: 0.09999988, g: 0.14999989, b: 0.24999988, a: 0}
     - _Vector0: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
