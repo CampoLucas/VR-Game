@@ -17,8 +17,8 @@ namespace VRGame.Puzzles
     {
         public PuzzleVisualState CurrentState { get; private set; }
  
-        [SerializeField] private Puzzle puzzle;
-        [SerializeField] private Renderer targetRenderer;
+        [SerializeField] protected Puzzle puzzle;
+        [SerializeField] protected Renderer targetRenderer;
 
         [Header("Settings")]
         [SerializeField] private bool flipConnectors = false;
@@ -32,15 +32,17 @@ namespace VRGame.Puzzles
         [SerializeField] private UnityEvent onSolved;
 
         private static readonly int EnabledPropertyId = Shader.PropertyToID("_Enabled");
-        private static readonly int OnPropertyId = Shader.PropertyToID("_On");
+        private static readonly int SolvedPropertyId = Shader.PropertyToID("_Solved");
+        private static readonly int InvertPropertyId = Shader.PropertyToID("_Invert");
+        
+        
         private static readonly int WireOnPropertyId = Shader.PropertyToID("_IsOn");
-        private static readonly int FlipConnectorId = Shader.PropertyToID("_Flip");
 
         private MaterialPropertyBlock _propertyBlock;
         private MaterialPropertyBlock _flipConnectorBlock;
         private MaterialPropertyBlock _wireIsOnBlock;
         
-        private void Awake()
+        protected virtual void Awake()
         {
             if (!puzzle)
             {
@@ -60,7 +62,7 @@ namespace VRGame.Puzzles
             }
         }
         
-        private void Start()
+        protected virtual void Start()
         {
             puzzle.Attach(this);
             puzzle.OnEnabledSubject.Attach(this);
@@ -69,7 +71,7 @@ namespace VRGame.Puzzles
             if (targetRenderer)
             {
                 targetRenderer.GetPropertyBlock(_flipConnectorBlock, 0);
-                _flipConnectorBlock.SetFloat(FlipConnectorId, flipConnectors ? 1 : 0);
+                _flipConnectorBlock.SetFloat(InvertPropertyId, flipConnectors ? 1 : 0);
                 targetRenderer.SetPropertyBlock(_flipConnectorBlock, 0);
             }
         }
@@ -170,11 +172,11 @@ namespace VRGame.Puzzles
  
             targetRenderer.GetPropertyBlock(_propertyBlock, 0);
             _propertyBlock.SetFloat(EnabledPropertyId, state == PuzzleVisualState.Disabled ? 0f : 1f);
-            _propertyBlock.SetFloat(OnPropertyId, state == PuzzleVisualState.Solved ? 1f : 0f);
+            _propertyBlock.SetFloat(SolvedPropertyId, state == PuzzleVisualState.Solved ? 1f : 0f);
             targetRenderer.SetPropertyBlock(_propertyBlock, 0);
         }
  
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             puzzle.Detach(this);
             puzzle.OnEnabledSubject?.Detach(this);
