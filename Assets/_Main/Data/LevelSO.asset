@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelSO
   m_EditorClassIdentifier: 
   timerDuration: 300
-  parS: 120
-  parA: 180
-  parB: 240
+  parS: 15
+  parA: 60
+  parB: 120
   parC: 300

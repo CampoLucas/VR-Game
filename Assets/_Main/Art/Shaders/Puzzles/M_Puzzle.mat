@@ -52,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T_SequencePuzzle_LightMap_Final:
-        m_Texture: {fileID: 2800000, guid: f83fa49d061cd23439178dfb87f24755, type: 3}
+        m_Texture: {fileID: 2800000, guid: c0fcf8a3abac0a34dbf5570f494db54e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -83,13 +83,13 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ShadowIntensity: 1
+    - _ShadowIntensity: 2
     - _Solved: 1
     m_Colors:
     - _Color0: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDissabled: {r: 0.1330445, g: 0.17612204, b: 0.19496846, a: 0}
     - _ColorOf: {r: 0, g: 1.2053777, b: 1.7411011, a: 0}
-    - _ColorOff: {r: 0.15599984, g: 0.02785714, b: 0.033428535, a: 1}
+    - _ColorOff: {r: 0.15599975, g: 0.02785714, b: 0.033428535, a: 1}
     - _ColorOn: {r: 0, g: 1.2053777, b: 1.7411011, a: 0}
     - _ColorSolved: {r: 0, g: 1.304119, b: 0.4167804, a: 0}
     - _OscilateRange: {r: -0.1, g: 0.1, b: 0, a: 0}
