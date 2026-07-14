@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 9c2f8300bb4916c4e8ee1e43ea791219
+guid: c39e3422cad4cdd4ab8f82953644fa5b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SequencePuzzle
+    second: {fileID: 2100000, guid: fabcfb3cb168e754bba7a9b49699946f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -48,7 +53,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

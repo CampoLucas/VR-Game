@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 536c90c0d72d3a94b9e183884782690e
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _T_Atlas_Rooms_LightMap_Direct: {fileID: 2800000, guid: 4e3b8b942091b8842b1ad094ee4892e6, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

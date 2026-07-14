@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Wires_Off
+  m_Shader: {fileID: 4800000, guid: 536c90c0d72d3a94b9e183884782690e, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _T_Atlas_Rooms_LightMap_Direct:
+        m_Texture: {fileID: 2800000, guid: 3f5fa353ef949a24f889ccc2142ebcab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Float0: 0.79
+    - _Float1: 27.8
+    - _Float2: 0.2
+    - _IsOn: 0
+    - _Pixeldensity: 15
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Speed: 0.15
+    m_Colors:
+    - _Color: {r: 0.15094319, g: 0.15094319, b: 0.15094319, a: 0}
+    - _LightColor: {r: 1, g: 0.8, b: 0.6, a: 1}
+    - _OffColor: {r: 0.3882351, g: 0, b: 0.005902156, a: 1}
+    - _OnColor: {r: 0, g: 0.9911022, b: 0.9911022, a: 1}
+    - _PixelDens: {r: 40, g: 15, b: 0, a: 0}
+    - _ShadowColor: {r: 0.09999972, g: 0.14999968, b: 0.24999964, a: 0}
+    - _Vector0: {r: 1, g: 1, b: 1, a: 0}
+  m_BuildTextureStacks: []

@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: c3464cd012f668641bf75f4736abc5a6
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _T_LeverPuzzle_Base_Final: {fileID: 2800000, guid: c78b4c637b54add45bd60c656d9328cc, type: 3}
+  - _T_LeverPuzzle_EmissionRGB: {fileID: 2800000, guid: c5a063ad30c0e4449ae126347c7392eb, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
