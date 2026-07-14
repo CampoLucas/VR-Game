@@ -29,25 +29,18 @@ namespace VRGame.Puzzles.PhysicalButton
             _restPosition = buttonVisual.position;
             
             pokeInteractable.WhenSelectingInteractorAdded.Action += OnPress;
-            //pokeInteractable.WhenSelectingInteractorRemoved.Action += OnRelease;
         }
         
         private void OnPress(PokeInteractor interactor)
         {
             if (IsPressed) return;
             
-            Debug.Log("Press");
             IsPressed = true;
             pokeInteractable.enabled = false;
             buttonVisual.position = surface.position;
             
             onPressed.Invoke(id);
         }
-
-        // private void OnRelease(PokeInteractor interactor)
-        // {
-        //     Debug.Log("Release");
-        // }
         
         [ContextMenu("Reset")]
         public void ResetButton()
@@ -60,7 +53,6 @@ namespace VRGame.Puzzles.PhysicalButton
         private void OnDestroy()
         {
             pokeInteractable.WhenSelectingInteractorAdded.Action -= OnPress;
-            //pokeInteractable.WhenSelectingInteractorRemoved.Action -= OnRelease;
         }
     }
 }

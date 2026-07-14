@@ -102,8 +102,6 @@ namespace VRGame.Puzzles.Elements.Button
 
         public void SetDisabled(bool disabled)
         {
-            //_stateMachine.TransitionTo(disabled ? ButtonState.Disabled : ButtonState.Normal);
-
             if (disabled)
             {
                 SetAsDisabled();
@@ -194,7 +192,6 @@ namespace VRGame.Puzzles.Elements.Button
 
         private void SetAsDisabled()
         {
-            Debug.Log("ButtonTest: Set as disabled");
             pokeInteractable.enabled = false;
             buttonVisual.position = surface.position;
         }
