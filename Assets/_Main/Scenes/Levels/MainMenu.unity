@@ -3196,6 +3196,7 @@ GameObject:
   - component: {fileID: 442066152}
   - component: {fileID: 442066151}
   - component: {fileID: 442066150}
+  - component: {fileID: 442066155}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -3356,6 +3357,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 44860157}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &442066155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442066148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c951bad9e5630c45be06dece906440d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenFade: {fileID: 442066151}
 --- !u!1 &454303243
 GameObject:
   m_ObjectHideFlags: 0
