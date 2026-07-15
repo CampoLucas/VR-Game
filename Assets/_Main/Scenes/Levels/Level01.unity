@@ -376,9 +376,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2605859505211919192, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3719156535350117554, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
       propertyPath: m_Name
       value: FPS Display (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719156535350117554, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590931504721948073, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115322594018360574, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -918,9 +934,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2605859505211919192, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3719156535350117554, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
       propertyPath: m_Name
       value: FPS Display (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719156535350117554, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590931504721948073, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115322594018360574, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1042,9 +1074,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2605859505211919192, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3719156535350117554, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
       propertyPath: m_Name
       value: FPS Display (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719156535350117554, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590931504721948073, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115322594018360574, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1131,7 +1179,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1440074628
 Transform:
@@ -1417,9 +1465,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2605859505211919192, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3719156535350117554, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
       propertyPath: m_Name
       value: FPS Display (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719156535350117554, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590931504721948073, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115322594018360574, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1937,9 +2001,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2605859505211919192, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3719156535350117554, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
       propertyPath: m_Name
       value: FPS Display
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719156535350117554, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590931504721948073, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115322594018360574, guid: da94cf6e29765eb499508a7ad0f81efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2275,6 +2355,30 @@ PrefabInstance:
     - target: {fileID: 5482094052477996362, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799791130632997351, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2224624
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799791130632997351, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7620209
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799791130632997351, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      propertyPath: m_Size.z
+      value: 0.7757338
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799791130632997351, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      propertyPath: m_Center.x
+      value: 0.15117
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799791130632997351, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      propertyPath: m_Center.y
+      value: -0.012724076
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799791130632997351, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
+      propertyPath: m_Center.z
+      value: 0.112133265
       objectReference: {fileID: 0}
     - target: {fileID: 6937902818672876425, guid: 09202adfa2c80444b9535650cd23e327, type: 3}
       propertyPath: targetPlayer
